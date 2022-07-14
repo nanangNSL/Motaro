@@ -1,0 +1,576 @@
+@font-face {
+  font-family: "AirBd";
+  src: local("AirbnbBold"),
+    url("../style/fonts/AirbnbCereal_W_Bd.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "AirBk";
+  src: local("AirbnbBold"),
+    url("../style/fonts/AirbnbCereal_W_Bk.otf") format("opentype");
+}
+@font-face {
+  font-family: "AirBlk";
+  src: local("AirbnbBold"),
+    url("../style/fonts/AirbnbCereal_W_Blk.otf") format("opentype");
+}
+@font-face {
+  font-family: "AirLt";
+  src: local("AirbnbBold"),
+    url("../style/fonts/AirbnbCereal_W_Lt.otf") format("opentype");
+}
+@font-face {
+  font-family: "AirMd";
+  src: local("AirbnbBold"),
+    url("../style/fonts/AirbnbCereal_W_Md.otf") format("opentype");
+}
+@font-face {
+  font-family: "AirXbd";
+  src: local("AirbnbBold"),
+    url("../style/fonts/AirbnbCereal_W_XBd.otf") format("opentype");
+}
+
+.font-bnb {
+  font-family: "AirBk";
+  color: #2e266f;
+  font-style: normal !important;
+  font-weight: 400 !important ;
+  font-size: 72px !important;
+}
+.cardFooter {
+  text-align: center;
+  background-color: #efc81a !important;
+  padding: 40px;
+}
+.container-footer{
+  background-color: #efc81a !important;
+}
+.jumbroton-popular{
+  height: 100vh;
+}
+.col-popular{
+  height: 70vh;
+  margin-top: 5vh;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.col-popular-footer{
+  height: 100vh;
+  margin-top: -1vh;
+  padding: 1%;
+  padding-bottom: 65%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  justify-content: center;
+  margin-bottom: 5vh;
+  
+}
+.col-pg{
+  background-color: #efc81a !important;
+  color: #efc81a !important;
+}
+.row-pagination{
+  display: flex;
+  flex-direction: row;
+  justify-content: center !important;
+  align-items: center;
+}
+.banner-pop{
+  border-left: 15px solid #EFC81A !important;
+  color: #2E266F;
+  font-family: "AirBd";
+  background: none;
+  border: none;
+  margin-left: 8vw;
+}
+.banner-pop-footer{
+  border-left: 15px solid #EFC81A !important;
+  color: #2E266F;
+  font-family: "AirBd";
+  background: none;
+  border: none;
+  margin-left: 3vw;
+}
+.image-popular{
+  margin: 2%;
+  background: none;
+  border: none;
+}
+.container-detail{
+  display: flex;
+  flex-direction: row;
+  justify-content: center !important;
+  background: none;
+}
+.image-recipe{
+  width: 50%;
+  max-width: 40vw;
+  height: auto;
+}
+.button-video{
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+}
+.button-modal{
+  width: 10vw;
+  height: 8vh;
+  margin: 2%;
+  padding-top: 1%;
+  background-color: #efc81a;
+  border: none;
+}
+
+.bottom-left {
+  position: absolute !important;
+  color: #FFF5EC;
+  margin-top: 52vh;
+  margin-left: 4vw;
+}
+.bottom-pop {
+  position: absolute !important;
+  color: #FFF5EC;
+  margin-top: 40vh;
+  margin-left: 4vw;
+}
+.col-grid{
+  height: 100vh;
+}
+.banner{
+  z-index: 2 !important;
+}
+.textFooterTop {
+  color: #707070 !important;
+}
+.textFooterButtom {
+  font-family: "AirBk";
+  padding-top: 7%;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-decoration: none;
+}
+.button-logout{
+  font-family: "AirBk";
+  width: 10vw;
+  padding: 10px 10px !important;
+  margin-left: 1vw;
+  background-color: #2e266f !important;
+}
+.textFooterButtomSmall {
+  font-family: "AirBk";
+  padding: 3%;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-decoration: none;
+  background-color: #efc81a !important;
+}
+.container-Small {
+  background-color: #efc81a !important;
+}
+
+.textColorFooter {
+  color: #707070 !important;
+}
+
+.container-pagehome {
+  /* overflow: hidden; */
+  position: absolute;
+  height: 120vh;
+  background-color: #fff5ec;
+  z-index: -1;
+}
+.container-white {
+  overflow: hidden;
+  position: fixed;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: -1;
+}
+.container-line-yellow {
+  overflow: hidden;
+  position: fixed;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: -1;
+}
+.container-full-white {
+  overflow: hidden;
+  position: fixed;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: -1;
+}
+.colorGW {
+  background-color: #efc81a !important;
+}
+.nav-login {
+  font-family: "AirBk";
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  align-items: center;
+  text-align: center;
+  color: #ffffff !important;
+}
+.colorNav {
+  font-family: "AirBk";
+  color: #2e266f !important;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+}
+.colorNav:hover {
+  text-decoration-line: underline;
+}
+.colorNav:active {
+  text-decoration-line: underline;
+}
+.bg-yellow{
+  margin-left: -1%;
+  height: 75vh;
+  position: absolute;
+  background-color: #efc81a;
+  border-radius: 0rem;
+}
+.jumbroton-new{
+  margin-top: 4vh;
+  float: left;
+  width: 1000px !important;
+}
+.lineNew{
+  width: 6vw;
+  height: 2px !important;
+  background-color: #3F3A3A!important;
+}
+.card-bodyNew{
+margin-top: 35vh;
+padding: 10%;
+font-family: "AirBk";
+font-weight: 10px;
+}
+.image-new{
+  margin: 10% 20%;
+  background: none;
+  border: none;
+}
+.bg-pop{
+  background-color: #fff5ec;
+  margin-top: 20vh;
+}
+.bg-new{
+  background-color: #fff5ec;
+}
+.btn-new{
+  background-color: #efc81a;
+  color: #fff5ec ;
+  border: none;
+}
+.card-titleNew{
+  font-size: 48px;
+  color: #3F3A3A;
+}
+.btn-new:hover{
+  background-color: green;
+  color: #fff5ec ;
+  border: none;
+}
+
+.col-template {
+  background-color: #efc81a !important;
+  height: 120vh !important;
+  z-index: 3 !important;
+}
+.col-line-yellow {
+  background-color: #efc81a;
+}
+.col-template-full-white {
+  background-color: #ffffff;
+}
+
+.yellow-front{
+  /* background-color: #2E266F; */
+}
+.col-template-full-color {
+  margin-top: -50px;
+  background-color: #fff5ec;
+}
+.col-templatee {
+  background-color: #fff5ec;
+}
+.col-template-8 {
+  width: 90vw;
+}
+.col-template-1 {
+  width: 70px;
+}
+.col-template-2 {
+  width: 20vw;
+  z-index: -1;
+}
+.col-login {
+  background: url("../style/images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 20px 0px 0px 20px;
+  box-shadow: 10px 10px 10px #666666;
+}
+.col-login-1 {
+  font-family: "AirBk";
+  color: #696f79;
+  border-radius: 0px 20px 20px 0px;
+  font-size: 14px;
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 25vw !important;
+  padding: 2%;
+  box-shadow: 10px 10px 10px #666666;
+}
+.mini-text {
+  font-size: 12px !important;
+}
+.title-login {
+  color: #efc81a;
+  font-family: "AirBlk";
+}
+.hr-title {
+  margin-bottom: -1vh;
+}
+.hr-md {
+  margin-top: -1vh;
+}
+.title-text {
+  font-size: 12px;
+}
+.label-login {
+  float: left;
+  font-size: 13px;
+  margin-bottom: -1px !important;
+  line-height: 30px;
+}
+.botton-x {
+  background-color: #efc81a !important;
+  border-style: none !important;
+  border-radius: 10px;
+  font-size: 14px !important;
+  color: #ffffff;
+  width: 23vw;
+  height: 7vh;
+  margin-top: -1px;
+}
+.botton-x:hover {
+  background: -webkit-linear-gradient(top left, #e7e698, #c9def1);
+}
+.custom-bg {
+  height: 100vh;
+  margin-top: -1px; /* Created with https://www.css-gradient.com */
+  /* Created with https://www.css-gradient.com */
+  background: #fff5ec;
+  background: -webkit-linear-gradient(bottom right, #fff5ec, #efc81a);
+  background: -moz-linear-gradient(bottom right, #fff5ec, #efc81a);
+  background: linear-gradient(to top left, #fff5ec, #efc81a);
+}
+.custom-bg-xl {
+  height: 120vh;
+  margin-top: -1px; /* Created with https://www.css-gradient.com */
+  /* Created with https://www.css-gradient.com */
+  background: #fff5ec;
+  background: -webkit-linear-gradient(bottom right, #fff5ec, #efc81a);
+  background: -moz-linear-gradient(bottom right, #fff5ec, #efc81a);
+  background: linear-gradient(to top left, #fff5ec, #efc81a);
+}
+.hr-login {
+  width: 20vw;
+  margin-left: 1vw;
+  margin-top: -2% !important;
+  line-height: 1px !important;
+  margin-bottom: 3%;
+}
+.input-login {
+  font-size: 12px !important;
+  font-family: "AirBk";
+}
+.input-login:focus {
+  font-size: 12px !important;
+  font-family: "AirBk";
+  border: 2px solid #efc81a !important;
+}
+.input-login:hover {
+  border: 1px solid #efc81a;
+}
+.card-name {
+  text-align: center;
+  text-decoration: none;
+}
+.col-bg {
+  height: 870px;
+  width: 878px;
+  left: 927px;
+  top: 250px;
+  border-radius: 0px;
+  background-color: #2e266f;
+  z-index: 1;
+}
+
+.bg-1 {
+  width: 40vw !important;
+  z-index: 2;
+}
+.form-jumbroton {
+  /* padding: 40%; */
+  font-family: "AirBd";
+  color: #2e266f;
+  display: flex !important;
+  flex-direction: column !important;
+  /* align-self: baseline; */
+  width: 100vw !important;
+  padding-top: 30vh;
+  overflow: hidden;
+}
+.font-card {
+  font-size: 72px !important;
+  background-color: #fff5ec !important;
+}
+.font-card-white {
+  font-size: 72px !important;
+}
+.search-form {
+  font-family: "AirBk";
+  font-size: 18px !important;
+  width: 100% !important;
+  height: 10vh !important;
+}
+.title-size {
+  font-size: 50px !important;
+  line-height: 50px !important;
+}
+.contaner-add-recipe {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "AirBk";
+  color: #666666;
+}
+.form-photo {
+  position: relative;
+  background-color: #f6f5f4;
+  height: 380px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+}
+.form-file {
+  width: 20vw !important;
+  height: 30vh !important;
+  position: absolute;
+  padding: 0% !important;
+  justify-content: center;
+  flex-direction: colum;
+  visibility: hidden;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 30 vh !important;
+}
+.icon-images {
+  font-size: 48px;
+}
+.button-post {
+  width: 20vw;
+  padding: 14px 4px !important;
+  background-color: #efc81a !important;
+}
+.col-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10vh;
+}
+.form-video {
+  position: relative;
+  background-color: #f6f5f4;
+  height: 30px;
+  border-radius: 20px;
+}
+.label-video {
+  flex-direction: column;
+}
+.container-auth {
+  position: relative;
+  margin: 0 !important;
+  display: flex;
+  padding: 0 !important;
+  z-index: -1;
+}
+.bg-custom {
+  height: 180vh;
+  width: 50vw !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: url("../style/images/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.img-cooke {
+  justify-content: center;
+  text-align: center;
+  width: 60px;
+  height: 80px;
+  margin-top: 30vh;
+}
+.img-cooke-xl {
+  justify-content: center;
+  text-align: center;
+  width: 70px;
+  height: 90px;
+  margin-top: 40vh;
+}
+.link-down {
+  text-decoration: none;
+}
+.link-down:hover {
+  font-size: 16px;
+  text-decoration: underline;
+}
+.custom-table{
+  padding: 1% !important;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  border-radius: 10px !important;
+
+}
+.navbarhome{
+  background-color: #2e266f !important;
+}
+.card-recipe{
+  overflow: hidden;
+  margin: 1%;
+}
+.image-responsive{
+  height: 37vh;
+  border-radius: 10px;
+
+}

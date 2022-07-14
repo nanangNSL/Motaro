@@ -1,0 +1,11 @@
+{
+  "name": "motaro",
+  "version": "1.0.0",
+  "description": "Motaro is recipe search website",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "Nanang Komarudin",
+  "license": "MIT"
+}

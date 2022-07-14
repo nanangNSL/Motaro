@@ -1,0 +1,24 @@
+1. Semua requirement dari Week Sebelumnya
+2. Navigation (Public & Private)
+3. Login dan register (page)
+4. localStorage
+5. Redux (CRUD) & with file
+6. URL Params (Search, Sort dan Pagination)
+7. Build & deploy
+8. ENV
+9. Responsive
+10. Linter
+11. Hooks
+12. Gunakan Bahasa Inggris untuk nama File dan Fungsi
+13. Upload/push tugas kamu ke GitHub dan gunakan nama yang profesional
+14. Presentasikan apa yang telah Anda lakukan dalam minggu ini
+15. Jelaskan dengan bahasa kalian sendiri apa itu dan konsep tentang:
+	Redux
+	HOC
+Ceritakan dan Demokan tentang proyek ini
+
+Redux adalah helpers management state
+HOC adalah kependekan dari High Order Component dan apa itu  
+ teknik lanjutan dalam React untuk menggunakan kembali logic dari suatu komponen
+ HOC menerima sebuah komponen dan mengembalikan komponen baru. 
+ HOC umum digunakan di aplikasi pihak ketiga React seperti Redux dan Relay
