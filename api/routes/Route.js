@@ -18,7 +18,7 @@ module.exports = (route) => {
   route.post("/login", Login);
   route.delete("/logout", Logout);
   route.get("/token", refreshToken);
-  route.get("/", (req, res) => {
+  route.get("*", (req, res) => {
     res.json("sukses");
   });
 
