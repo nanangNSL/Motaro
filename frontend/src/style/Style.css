@@ -42,13 +42,13 @@
   background-color: #efc81a !important;
   padding: 40px;
 }
-.container-footer{
+.container-footer {
   background-color: #efc81a !important;
 }
-.jumbroton-popular{
+.jumbroton-popular {
   height: 100vh;
 }
-.col-popular{
+.col-popular {
   height: 70vh;
   margin-top: 5vh;
   float: left;
@@ -56,7 +56,7 @@
   flex-direction: row;
   position: relative;
 }
-.col-popular-footer{
+.col-popular-footer {
   height: 100vh;
   margin-top: -1vh;
   padding: 1%;
@@ -67,56 +67,102 @@
   overflow: hidden;
   justify-content: center;
   margin-bottom: 5vh;
-  
 }
-.col-pg{
+.col-pg {
   background-color: #efc81a !important;
   color: #efc81a !important;
 }
-.row-pagination{
+.row-pagination {
   display: flex;
   flex-direction: row;
   justify-content: center !important;
   align-items: center;
 }
-.banner-pop{
-  border-left: 15px solid #EFC81A !important;
-  color: #2E266F;
+.banner-pop {
+  border-left: 15px solid #efc81a !important;
+  color: #2e266f;
   font-family: "AirBd";
   background: none;
   border: none;
   margin-left: 8vw;
 }
-.banner-pop-footer{
-  border-left: 15px solid #EFC81A !important;
-  color: #2E266F;
+.banner-pop-footer {
+  border-left: 15px solid #efc81a !important;
+  color: #2e266f;
   font-family: "AirBd";
   background: none;
   border: none;
   margin-left: 3vw;
 }
-.image-popular{
+.image-popular {
   margin: 2%;
   background: none;
   border: none;
 }
-.container-detail{
+.container-detail {
   display: flex;
   flex-direction: row;
   justify-content: center !important;
   background: none;
 }
-.image-recipe{
+
+.button-profile {
+  width: 20vw;
+  margin: 1%;
+  background-color: #e7e7e7;
+  color: #666666;
+  border: none;
+}
+.icon-pen {
+  color: #efc81a;
+}
+.pen-profile {
+  font-family: "AirBk";
+  color: #efc81a !important;
+  text-align: center;
+  height: max-content;
+  margin-top: 34vh;
+  margin-left: -3vw;
+  border: none;
+  background: none;
+}
+.color-bar {
+  font-family: "AirBk";
+  color: #666666 !important;
+}
+.name-profile {
+  position: absolute;
+  font-family: "AirBk";
+  margin-top: 45vh;
+  margin-left: -2vw;
+}
+.image-recipe {
   width: 50%;
   max-width: 40vw;
   height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-.button-video{
+.card-profile {
+  width: 50%;
+  max-width: 50vw;
+  padding-bottom: 10vh;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.image-profile {
+  width: 15rem;
+  border-radius: 50%;
+}
+.button-video {
   display: flex;
   flex-direction: column;
   width: 20vw;
 }
-.button-modal{
+.button-modal {
   width: 10vw;
   height: 8vh;
   margin: 2%;
@@ -127,20 +173,20 @@
 
 .bottom-left {
   position: absolute !important;
-  color: #FFF5EC;
+  color: #fff5ec;
   margin-top: 52vh;
   margin-left: 4vw;
 }
 .bottom-pop {
   position: absolute !important;
-  color: #FFF5EC;
+  color: #fff5ec;
   margin-top: 40vh;
   margin-left: 4vw;
 }
-.col-grid{
+.col-grid {
   height: 100vh;
 }
-.banner{
+.banner {
   z-index: 2 !important;
 }
 .textFooterTop {
@@ -155,7 +201,7 @@
   justify-content: center;
   text-decoration: none;
 }
-.button-logout{
+.button-logout {
   font-family: "AirBk";
   width: 10vw;
   padding: 10px 10px !important;
@@ -231,59 +277,67 @@
   line-height: 23px;
   text-align: center;
 }
+.pen-profile {
+  font-family: "AirBk";
+  color: #efc81a !important;
+  text-align: center;
+}
 .colorNav:hover {
   text-decoration-line: underline;
 }
 .colorNav:active {
   text-decoration-line: underline;
 }
-.bg-yellow{
+.bg-yellow {
   margin-left: -1%;
   height: 75vh;
   position: absolute;
   background-color: #efc81a;
   border-radius: 0rem;
 }
-.jumbroton-new{
+.jumbroton-new {
   margin-top: 4vh;
   float: left;
   width: 1000px !important;
 }
-.lineNew{
+.lineNew {
   width: 6vw;
   height: 2px !important;
-  background-color: #3F3A3A!important;
+  background-color: #3f3a3a !important;
 }
-.card-bodyNew{
-margin-top: 35vh;
-padding: 10%;
-font-family: "AirBk";
-font-weight: 10px;
+.card-bodyNew {
+  margin-top: 35vh;
+  padding: 10%;
+  font-family: "AirBk";
+  font-weight: 10px;
 }
-.image-new{
+.image-new {
   margin: 10% 20%;
   background: none;
   border: none;
 }
-.bg-pop{
+.bg-pop {
   background-color: #fff5ec;
   margin-top: 20vh;
 }
-.bg-new{
+.bg-new {
   background-color: #fff5ec;
 }
-.btn-new{
+.bg-white {
+  background-color: #ffffff;
+}
+.btn-new {
   background-color: #efc81a;
-  color: #fff5ec ;
+  color: #fff5ec;
   border: none;
 }
-.card-titleNew{
+.card-titleNew {
   font-size: 48px;
-  color: #3F3A3A;
+  color: #3f3a3a;
 }
-.btn-new:hover{
+.btn-new:hover {
   background-color: green;
-  color: #fff5ec ;
+  color: #fff5ec;
   border: none;
 }
 
@@ -299,7 +353,7 @@ font-weight: 10px;
   background-color: #ffffff;
 }
 
-.yellow-front{
+.yellow-front {
   /* background-color: #2E266F; */
 }
 .col-template-full-color {
@@ -333,7 +387,7 @@ font-weight: 10px;
   font-size: 14px;
   background-color: #ffffff;
   overflow: hidden;
-  width: 25vw !important;
+  width: 27vw !important;
   padding: 2%;
   box-shadow: 10px 10px 10px #666666;
 }
@@ -554,23 +608,21 @@ font-weight: 10px;
   font-size: 16px;
   text-decoration: underline;
 }
-.custom-table{
+.custom-table {
   padding: 1% !important;
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
   border-radius: 10px !important;
-
 }
-.navbarhome{
+.navbarhome {
   background-color: #2e266f !important;
 }
-.card-recipe{
+.card-recipe {
   overflow: hidden;
   margin: 1%;
 }
-.image-responsive{
+.image-responsive {
   height: 37vh;
   border-radius: 10px;
-
 }

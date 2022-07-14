@@ -39,9 +39,9 @@ const Login = () => {
         <Col className="col-md-3 mt-5 d-flex justify-content-center col-login">
           <img src={cooke} alt={"cooke ada"} className="img-cooke" />
         </Col>
-        <Col className="col-md-3 d-flex  mt-5 col-login-1 border">
+        <Col className="col-md-5 d-flex  mt-5 col-login-1">
           <Form onSubmit={Auth}>
-            <Card className="text-center border border-0">
+            <Card className="text-center border-0">
               <Card.Body>
                 <Card.Title className="title-login">Welcome</Card.Title>
                 <Card.Text className="title-text">
