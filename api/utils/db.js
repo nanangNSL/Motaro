@@ -23,7 +23,7 @@ if (process.env.MODE_ENV !== "production") {
 
 pool.connect(function (err) {
   if (err) throw err;
-  console.log("Database connected 🚀!");
+  console.log("Database connected !");
 });
 
 module.exports = {
