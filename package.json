@@ -4,8 +4,9 @@
   "description": "![motaro](https://user-images.githubusercontent.com/45787278/175339721-9b526db2-8d9c-487d-8a95-c23f25ab76f4.svg)\r ## Panduan intalasi\r  ### Kamu harus install depedency ini 📜\r - Express\r - pg\r - body-parser\r - cors\r - dotenv\r - morgan\r - multer\r - eslint\r - nodemon\r ### ini akan terus dikembangkan ! Masih bentuk revisi",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon main.js"
-  },
+    "start": "node main.js",
+    "start:dev": "nodemon main.js"
+},
   "keywords": [],
   "author": "Nanang Komarudin",
   "license": "MIT",
