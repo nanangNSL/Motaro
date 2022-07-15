@@ -20,9 +20,10 @@ glob.sync('./api/routes/Route.js').forEach((file) => {
 
 app.use(errorController.notFound);
 app.use(errorController.error);
+console.log(process.env.PORT)
 
 
 
 app.listen(process.env.PORT || 5000, () => {
-    console.log('CORS-enabled web server listening on port', process.env.PORT || 8080);
+    console.log('CORS-enabled web server listening on port', process.env.PORT);
 });

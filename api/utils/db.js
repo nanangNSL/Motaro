@@ -1,6 +1,4 @@
-const { Client } = require("pg");
-
-const Pool = require("pg").Pool;
+const { Client, Pool} = require("pg");
 require("dotenv").config();
 
 let pool;
