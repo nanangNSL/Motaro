@@ -20,7 +20,6 @@ glob.sync('./api/routes/Route.js').forEach((file) => {
 
 app.use(errorController.notFound);
 app.use(errorController.error);
-console.log(process.env.PORT)
 
 
 
