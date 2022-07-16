@@ -12,24 +12,25 @@ const { Register, Login, Logout } = require("../controllers/authController");
 const { verifyToken } = require("../middleware/verifyToken");
 const { refreshToken } = require("../controllers/refreshToken");
 
+
 module.exports = (route) => {
   // authenticate
-  route.post("/users", Register);
-  route.post("/login", Login);
-  route.delete("/logout", Logout);
-  route.get("/token", refreshToken);
-  route.get("*", (req, res) => {
-    res.json("sukses");
-  });
+  route.post("/users",  Register);
+  route.post("/login",   Login);
+  route.delete("/logout",   Logout);
+  route.get("/token",   refreshToken);
+  // route.get("*", (req, res) => {
+  //   res.json("sukses boss");
+  // });
 
   // search for users
-  route.get("/motaro/find", verifyToken,search.searchAllUsers);
+  route.get("/motaro/find", search.searchAllUsers);
 
   //search for admin
   route.get("/admin/:email", verifyToken, search.searchByUserEmail);
   route.get("/admin/id/:id", verifyToken, search.searchById);
   route.get("/admin/comment/:id", verifyToken, search.searchCommentById);
-  route.get("/admin/recipe/:id", verifyToken, search.searchRecipeId);
+  route.get("/admin/recipe/:id", search.searchRecipeId);
   route.get("/admin/video/:id", verifyToken, search.searchVideoId);
 
   // profile

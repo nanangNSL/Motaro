@@ -1,9 +1,9 @@
 const multer = require("multer");
 const path = require("path");
 
-const storageUser = path.join(__dirname, "../../asset/image-user");
-const storageRecipe = path.join(__dirname, "../../asset/image-recipe");
-const storageVideo = path.join(__dirname, "../../asset/video");
+const storageUser = path.join(__dirname, "../../public");
+const storageRecipe = path.join(__dirname, "../../public");
+const storageVideo = path.join(__dirname, "../../public");
 
 const assetUsers = multer.diskStorage({
     destination: (req, res, callback) => {

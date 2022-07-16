@@ -2,10 +2,9 @@ const recipeService = require('../services/recipeServices');
 
 exports.insert = async (request, response, next) => {
   try {
-    let doy = request.file.path;
-    const converPath = doy.replace("C:\\Users\\nanan\\BOOTCAMP\\Motaro\\Backend\\asset\\image-recipe\\", "http://localhost:5500/Backend/asset/image-recipe/");
-  
-      const data = await recipeService.insert({...request.body, image: converPath});
+    const fileName = request.file.filename;
+    const url = `${request.protocol}://${request.get('host')}/public/${fileName}`;
+    const data = await recipeService.insert({...request.body, image: url});
       response.json({ data });
   } catch (error) {
     next(error);
@@ -24,10 +23,10 @@ exports.select = async (request, response, next) => {
 
 exports.update = async (request, response, next) => {
   try {
-    let doy = request.file.path;
-    const converPath = doy.replace("C:\\Users\\nanan\\BOOTCAMP\\Motaro\\Backend\\asset\\image-recipe\\", "http://localhost:5500/Backend/asset/image-recipe/");
-  
-    const data = await recipeService.update(request.params.id, {...request.body, image: converPath});
+ 
+    const fileName = request.file.filename;
+    const url = `${request.protocol}://${request.get('host')}/public/${fileName}`;
+    const data = await recipeService.update(request.params.id, {...request.body, image: url});
     if (!data) { next(); } else { response.json({ data }); }
   } catch (error) {
     next(error);

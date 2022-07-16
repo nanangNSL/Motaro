@@ -2,10 +2,9 @@ const videoService = require('../services/videoService');
 
 exports.insert = async (request, response, next) => {
   try {
-    let doy = request.file.path;
-    const converPath = doy.replace("C:\\Users\\nanan\\BOOTCAMP\\Motaro\\Backend\\asset\\video\\", "http://localhost:5500/Backend/asset/video/");
-  
-      const data = await videoService.insert({...request.body, video: converPath});
+    const fileName = request.file.filename;
+    const url = `${request.protocol}://${request.get('host')}/public/${fileName}`;
+      const data = await videoService.insert({...request.body, video: url});
       response.json({ data });
   } catch (error) {
     next(error);

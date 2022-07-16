@@ -14,6 +14,7 @@ app.use(cors());
 app.use(cors({ credentials:true, origin:'http://localhost:3000' }));
 app.use(cookieParser());
 
+app.use("/public", express.static('public'))
 glob.sync('./api/routes/Route.js').forEach((file) => {
     require(file)(app);
 });
@@ -21,8 +22,6 @@ glob.sync('./api/routes/Route.js').forEach((file) => {
 app.use(errorController.notFound);
 app.use(errorController.error);
 
-
-
 app.listen(process.env.PORT || 5000, () => {
-    console.log('CORS-enabled web server listening on port', process.env.PORT);
+    console.log('CORS-enabled web server listening on port', process.env.PORT || 5000);
 });

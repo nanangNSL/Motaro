@@ -2,7 +2,8 @@ const { Client, Pool} = require("pg");
 require("dotenv").config();
 
 let pool;
-if (process.env.MODE_ENV === "production") {
+// swtch to db
+if (process.env.MODE_ENV !== "production") {
   pool = new Client({
     connectionString: process.env.HEROKU_DB,
     ssl: {

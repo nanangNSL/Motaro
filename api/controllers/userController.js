@@ -3,15 +3,14 @@ const bcrypt = require("bcrypt");
 
 exports.insert = async (request, response, next) => {
   try {
-    let doy = request.file.path;
-    const converPath = doy.replace("C:\\Users\\nanan\\BOOTCAMP\\Motaro\\Backend\\asset\\image-user\\", "http://localhost:5500/Backend/asset/image-user/");
-  
+    const fileName = request.file.filename;
+    const url = `${request.protocol}://${request.get('host')}/public/${fileName}`;
     const test = request.body.password;
     const hash = bcrypt.hashSync(`${test}`, 10);
 
     const data = await usersService.insert({
       ...request.body,
-      image: converPath,
+      image: url,
       password: `${hash}`,
     });
     response.json({ data });
@@ -27,12 +26,11 @@ exports.update = async (request, response, next) => {
   try {
     const test = request.body.password;
     const hash = bcrypt.hashSync(`${test}`, 10);
-    let doy = request.file.path;
-    const converPath = doy.replace("C:\\Users\\nanan\\BOOTCAMP\\Motaro\\Backend\\asset\\image-user\\", "http://localhost:5500/Backend/asset/image-user/");
-  
+    const fileName = request.file.filename;
+    const url = `${request.protocol}://${request.get('host')}/public/${fileName}`;
     const data = await usersService.update(request.params.id,{
       ...request.body,
-      image: converPath,
+      image: url,
       password: `${hash}`,
     });
   

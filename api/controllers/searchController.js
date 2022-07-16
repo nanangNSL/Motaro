@@ -25,7 +25,6 @@ exports.searchAllUsers = async (request, response, next) => {
 exports.searchById = async (request, response, next) => {
     try {
       const data = await searchService.searchById(request.params.id);
-      console.log(data);
       if (!data) {
         next();
       } else {
