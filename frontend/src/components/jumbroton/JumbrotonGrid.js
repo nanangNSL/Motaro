@@ -1,43 +1,36 @@
-import React from "react";
+import React, { useEffect} from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import gambar1 from "../../style/images/popular.png";
 import BannerGrid from "../BannerGrid";
 import Pagination from "react-bootstrap/Pagination";
+import { useSelector, useDispatch } from "react-redux";
+import { getRecipe, recipeSelector } from "../../features/recipeSlice";
 
 const JumbrotonGrid = () => {
+    const dispatch = useDispatch();
+    const data  = useSelector(recipeSelector.selectAll)
+
+    useEffect(() => {
+      dispatch(getRecipe());
+    }, [dispatch]);
+
+
+
+
   return (
     <Container fluid className="bg-new">
       <Container>
         <BannerGrid />
         <Row>
           <Col className="col-popular-footer">
-            <Card style={{ width: "20rem" }} className="image-popular">
-              <Card.Img variant="top" src={gambar1} />
-              <Card.Title className="bottom-pop">Card Title</Card.Title>
+            {data.map((data, index) => (
+              <Card style={{ width: "20rem" }} className="image-popular" key={data[index]}>
+              <Card.Img variant="top" src={data.image} />
+              <Card.Title className="bottom-pop">{data.title}</Card.Title>
             </Card>
-            <Card style={{ width: "20rem" }} className="image-popular">
-              <Card.Img variant="top" src={gambar1} />
-              <Card.Title className="bottom-pop">Card Title</Card.Title>
-            </Card>
-            <Card style={{ width: "20rem" }} className="image-popular">
-              <Card.Img variant="top" src={gambar1} />
-              <Card.Title className="bottom-pop">Card Title</Card.Title>
-            </Card>
-            <Card style={{ width: "20rem" }} className="image-popular">
-              <Card.Img variant="top" src={gambar1} />
-              <Card.Title className="bottom-pop">Card Title</Card.Title>
-            </Card>
-            <Card style={{ width: "20rem" }} className="image-popular">
-              <Card.Img variant="top" src={gambar1} />
-              <Card.Title className="bottom-pop">Card Title</Card.Title>
-            </Card>
-            <Card style={{ width: "20rem" }} className="image-popular">
-              <Card.Img variant="top" src={gambar1} />
-              <Card.Title className="bottom-pop">Card Title</Card.Title>
-            </Card>
+            ))}
           </Col>
         </Row>
         <Row>

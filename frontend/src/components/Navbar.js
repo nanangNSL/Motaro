@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Avatar from "../style/images/avatar.png";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -31,7 +31,7 @@ const NavBar = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="/" className="colorNav">
+              <Nav.Link href="/dashboard" className="colorNav">
                 Home
               </Nav.Link>
               <Nav.Link href="edit/:id" className="colorNav">
@@ -49,11 +49,15 @@ const NavBar = () => {
                 height={30}
                 className="rounded-circle"
               />
-              <NavDropdown title="Guest" id="basic-nav-dropdown"  className="colorNav">
-                <NavDropdown.Item href="recipe">Search Recipe</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <Button variant="dark" className="button-logout" onClick={Logout}>Logout</Button>
-              </NavDropdown>
+              <Link to="/login">
+                <Button
+                  variant="outline-primary"
+                  className="ms-3 btn-sm btn-bar"
+                  onClick={Logout}
+                >
+                  Logout
+                </Button>
+              </Link>
             </Navbar.Collapse>
           </Navbar.Collapse>
         </Container>

@@ -3,14 +3,12 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Avatar from "../style/images/avatar.png";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 import "../style/Style.css";
-import { BiLogIn} from 'react-icons/bi';
+import { BiLogIn } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const NavbarHome = () => {
- 
-
   return (
     <Container>
       <Navbar expand="lg">
@@ -40,11 +38,16 @@ const NavbarHome = () => {
                 height={30}
                 className="rounded-circle"
               />
-              <NavDropdown title="Guest" id="basic-nav-dropdown"  className="colorNav">
-                <NavDropdown.Item href="/">About</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <Button variant="dark" className="button-logout" href="/login">Login<BiLogIn/></Button>
-              </NavDropdown>
+              <Link to="/login">
+                {" "}
+                <Button
+                  variant="outline-primary"
+                  className="ms-3 btn-sm btn-bar"
+                >
+                  Login
+                  <BiLogIn />
+                </Button>
+              </Link>
             </Navbar.Collapse>
           </Navbar.Collapse>
         </Container>

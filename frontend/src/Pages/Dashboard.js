@@ -5,7 +5,10 @@ import jwtDecode from "jwt-decode";
 import Navbar from "../components/Navbar"
 import TempLayout from "../components/template/TempLayoutWhite";
 import Jumbroton from "../components/jumbroton/JumbrotonWhite";
-import Button from "react-bootstrap/esm/Button";
+import Footer from "../components/footer/Footer";
+import JumbrotonNew from "../components/jumbroton/JumbrotonNew";
+import JumbrotonPopular from "../components/jumbroton/JumbrotonPopular";
+import JumbrotonGrid from "../components/jumbroton/JumbrotonGrid";
 
 
 
@@ -16,13 +19,14 @@ const Dashboard = () => {
 
   useEffect(() => {
     refreshToken();
-  }, []);
+  });
 
   const refreshToken = async () => {
     try {
       const response = await axios.get(`${process.env.REACT_APP_END_POINT_TOKEN}`);
       setToken(response.data.accessToken);
       const decoded = jwtDecode(response.data.accessToken);
+      console.log(JSON.stringify(decoded));
       setExpire(decoded.exp);
     } catch (error) {
       if (error.response) {
@@ -51,21 +55,24 @@ const Dashboard = () => {
     }
   );
 
-  const getUsers = async () => {
-    const response = await axiosJWT.get("http://localhost:5000/token", {
-      headers: {
-        Authorization: `bearer ${token}`,
-      },
-    });
-    console.log(response.data);
-  };
+  // const getUsers = async () => {
+  //   const response = await axiosJWT.get("http://localhost:5000/token", {
+  //     headers: {
+  //       Authorization: `bearer ${token}`,
+  //     },
+  //   });
+  //   console.log(response.data);
+  // };
 
   return (
     <>
     <TempLayout/>
      <Navbar/>
       <Jumbroton/> 
-      <Button onClick={getUsers}>Search</Button>
+      <JumbrotonPopular/>
+      <JumbrotonNew/>
+      <JumbrotonGrid/>
+      <Footer />
     
     </>
   );

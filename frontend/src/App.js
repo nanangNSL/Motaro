@@ -3,13 +3,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import "./style/Style.css";
 
-
-import ShowProduct from "./components/ShowProduct";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Dashboard from "./Pages/Dashboard";
 import Home from "./Pages/Home";
-import AddRecipe from "./components/Addrecipe";
+import AddRecipe from "../src/Pages/Addrecipe";
 // font
 import "./style/fonts/AirbnbCereal_W_Bd.otf";
 import "./style/fonts/AirbnbCereal_W_Bk.otf";
@@ -27,7 +25,6 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-         <Route path="recipe" element={<ShowProduct />}/>
          <Route path="profile" element={<Profile/>}/>
          <Route path="detail" element={<Recipe />}/>
          <Route path="edit/:id" element={<AddRecipe/>}/>

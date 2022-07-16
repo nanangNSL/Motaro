@@ -277,6 +277,35 @@
   line-height: 23px;
   text-align: center;
 }
+input#file {
+  display: inline-block;
+  width: 100%;
+  padding: 120px 0 0 0;
+  height: 100px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url('https://cdn0.iconfinder.com/data/icons/video-edit-tools/32/add_picture_images_gallery_selection_album_portfolio-1024.png') center center no-repeat #F6F5F4;
+  border-radius: 20px;
+  background-size: 60px 60px;
+}
+input#file-video{
+  display: inline-block;
+  width: 100%;
+  padding: 120px 0 0 0;
+  height: 100px;
+  overflow: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background-size: 60px 60px;
+}
+.btn-bar:hover{
+  font-family: "AirBk";
+  color: #ffffff;
+  background-color: #2e266f;
+}
 .pen-profile {
   font-family: "AirBk";
   color: #efc81a !important;
@@ -548,6 +577,11 @@
   font-size: 48px;
 }
 .button-post {
+  justify-content: center;
+  justify-items: center;
+  flex-direction: row;
+  align-items: center;
+  border: none;
   width: 20vw;
   padding: 14px 4px !important;
   background-color: #efc81a !important;
