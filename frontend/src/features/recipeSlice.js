@@ -10,6 +10,8 @@ export const getRecipe = createAsyncThunk("recipe/getRecipe", async () => {
   return response.data.data;
 });
 
+
+
 const recipeEntity = createEntityAdapter({
   selectId: (recipe) => recipe.recipe_id,
 });
@@ -20,7 +22,8 @@ const recipeSlice = createSlice({
   extraReducers: {
     [getRecipe.fulfilled]: (state, action) => {
       recipeEntity.setAll(state, action.payload);
-    }
+    },
+    
   },
 });
 

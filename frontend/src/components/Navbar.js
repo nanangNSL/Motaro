@@ -34,7 +34,7 @@ const NavBar = () => {
               <Nav.Link href="/dashboard" className="colorNav">
                 Home
               </Nav.Link>
-              <Nav.Link href="edit/:id" className="colorNav">
+              <Nav.Link href="add" className="colorNav">
                 Add Recipe
               </Nav.Link>
               <Nav.Link href="/profile" className="colorNav">

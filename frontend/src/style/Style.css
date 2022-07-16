@@ -60,13 +60,12 @@
   height: 100vh;
   margin-top: -1vh;
   padding: 1%;
-  padding-bottom: 65%;
+  padding-bottom: 50%;
   position: relative;
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
   justify-content: center;
-  margin-bottom: 5vh;
 }
 .col-pg {
   background-color: #efc81a !important;
@@ -180,8 +179,10 @@
 .bottom-pop {
   position: absolute !important;
   color: #fff5ec;
-  margin-top: 40vh;
-  margin-left: 4vw;
+  margin-top: 32vh;
+  margin-left: 2vw;
+  z-index: 1;
+  font-family: "Airbd";
 }
 .col-grid {
   height: 100vh;

@@ -8,7 +8,11 @@ import "../style/Style.css";
 import { BiLogIn } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
+
+
 const NavbarHome = () => {
+
+ 
   return (
     <Container>
       <Navbar expand="lg">
@@ -23,7 +27,8 @@ const NavbarHome = () => {
               <Nav.Link href="/" className="colorNav">
                 Home
               </Nav.Link>
-              <Nav.Link href="edit/:id" className="colorNav">
+              <Nav.Link href="add" className="colorNav"
+              >
                 Add Recipe
               </Nav.Link>
               <Nav.Link href="/profile" className="colorNav">

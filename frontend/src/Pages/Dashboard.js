@@ -26,7 +26,6 @@ const Dashboard = () => {
       const response = await axios.get(`${process.env.REACT_APP_END_POINT_TOKEN}`);
       setToken(response.data.accessToken);
       const decoded = jwtDecode(response.data.accessToken);
-      console.log(JSON.stringify(decoded));
       setExpire(decoded.exp);
     } catch (error) {
       if (error.response) {
