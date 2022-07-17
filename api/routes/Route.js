@@ -28,7 +28,7 @@ module.exports = (route) => {
 
   //search for admin
   route.get("/admin/:email", verifyToken, search.searchByUserEmail);
-  route.get("/admin/id/:id", verifyToken, search.searchById);
+  route.get("/admin/id/:id",  search.searchById);
   route.get("/admin/comment/:id", verifyToken, search.searchCommentById);
   route.get("/admin/recipe/:id", search.searchRecipeId);
   route.get("/admin/video/:id", verifyToken, search.searchVideoId);

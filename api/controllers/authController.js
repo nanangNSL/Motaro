@@ -41,6 +41,7 @@ exports.Login = async (request, response, next) => {
           process.env.ACCESS_TOKEN_SECRET,
           { expiresIn: "24s" }
         );
+
         const refreshToken = jwt.sign(
           { userId, name, email },
           process.env.REFRESH_TOKEN_SECRET,
@@ -48,12 +49,9 @@ exports.Login = async (request, response, next) => {
             expiresIn: "1d",
           }
         );
-        await usersService.updateToken({ refresh_token: refreshToken },
-          {
-            where: {
-              id: userId,
-            },
-          }
+        await usersService.updateToken(
+          { id: userId },
+          { refresh_token: refreshToken }
         );
         response.cookie("refreshToken", refreshToken, {
           httpOnly: true,
@@ -74,19 +72,13 @@ exports.Login = async (request, response, next) => {
 exports.Logout = async (request, response, next) => {
   try {
     const refreshToken = request.cookies.refreshToken;
-        if(!refreshToken) return response.sendStatus(204);
-        const data  = await searchService.searchToken(refreshToken);
-        if(!data[0]) return response.sendStatus(204);
+    if (!refreshToken) return response.sendStatus(204);
+    const data = await searchService.searchToken(refreshToken);
+    if (!data[0]) return response.sendStatus(204);
 
     if (!data[0]) return response.sendStatus(204);
     const userId = data[0].id;
-    await usersService.updateToken({ refresh_token: refreshToken },
-      {
-        where: {
-          id: userId,
-        },
-      }
-    );
+    await usersService.updateToken({ id: userId }, { refresh_token: null });
     response.clearCookie("refreshToken");
     return response.sendStatus(200);
   } catch (error) {

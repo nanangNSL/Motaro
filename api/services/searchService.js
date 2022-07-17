@@ -37,9 +37,3 @@ exports.searchToken = async (refresh_token) => {
     const posts = await searchModel.searchToken(refresh_token);
     return posts;
   };
-
-
-// exports.searchByName = async (data) => {
-//     const posts = await searchModel.searchByName(data);
-//     return posts;
-//   };

@@ -60,11 +60,12 @@ exports.update = async (id, data) => {
 };
 
 
-exports.updateToken = async (data) => {
+exports.updateToken = async (id, data) => {
   const row = await db.query(
-    `UPDATE users SET refresh_token=$1`,
+    `UPDATE users SET refresh_token=$1 WHERE id =$2`,
     [
-      data.refresh_token
+      data.refresh_token,
+      id.id
     ]
   );
   if (row.affectedRows === 0) {

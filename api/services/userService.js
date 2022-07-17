@@ -1,3 +1,4 @@
+const { request } = require('express');
 const usersModel = require('../models/userModel');
 const motaroValidator = require('../validators/motaroValidator');
 
@@ -20,7 +21,6 @@ exports.update = async (id, data) => {
 };
 
 exports.updateToken = async (id, data) => {
-  // motaroValidator(data, id);
   const post = await usersModel.updateToken(id, data);
   return post;
 };
