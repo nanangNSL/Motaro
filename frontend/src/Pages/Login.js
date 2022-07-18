@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,22 +9,35 @@ import axios from "axios";
 import "../style/Style.css";
 import cooke from "../style/images/cooke.png";
 
-
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [isLoading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [msg, setMsg] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (isLoading) {
+      Auth().then(() => {
+        setLoading(false);
+      });
+    }
+  }, [isLoading]);
+
+  const handleClick = () => setLoading(true);
+
   const Auth = async (event) => {
     event.preventDefault();
     try {
-      await axios.post(`${process.env.REACT_APP_END_POINT_LOGIN}`, {
-        email: email,
-        password: password,
-      });
+      await axios
+        .post(`${process.env.REACT_APP_END_POINT_LOGIN}`, {
+          email: email,
+          password: password,
+        }).finally(()=>{
+          setLoading(true)
+        })
       navigate("/dashboard");
     } catch (error) {
       if (error.response) {
@@ -79,8 +92,13 @@ const Login = () => {
                 label="I agree to terms & conditions"
               />
             </Form.Group>
-            <Button className=" botton-x" type="submit">
-              Login
+            <Button
+              className=" botton-x"
+              type="submit"
+              disabled={isLoading}
+              onSubmit={!isLoading ? handleClick : null}
+            >
+              {isLoading ? "Loading…" : "Log In"}
             </Button>
             <div className="d-flex justify-content-end mini-text">
               <p>Forgot Password?</p>

@@ -71,11 +71,8 @@
   background-color: #efc81a !important;
   color: #efc81a !important;
 }
-.row-pagination {
-  display: flex;
-  flex-direction: row;
-  justify-content: center !important;
-  align-items: center;
+.ms-card{
+  margin-left: 9vw;
 }
 .banner-pop {
   border-left: 15px solid #efc81a !important;
@@ -84,6 +81,7 @@
   background: none;
   border: none;
   margin-left: 8vw;
+  margin-top: 5vh;
 }
 .banner-pop-footer {
   border-left: 15px solid #efc81a !important;
@@ -93,10 +91,36 @@
   border: none;
   margin-left: 3vw;
 }
-.image-popular {
-  margin: 2%;
-  background: none;
+.img-pop{
+  width: 19rem;
+  height: 15rem;
+
+}
+.col-pagi{
+  background-color: #efc81a;
+  color: #2e266f;
+}
+.total{
+  margin-left: 16vh;
+  font-family: "AirBk";
+}
+.col-page{
+  color: #2e266f;
+}
+.col-search:hover{
+  background-color: #2e266f;
+}
+.col-search{
+  background-color: #efc81a;
   border: none;
+}
+.width-search{
+  width: 40vh;
+}
+.bottom-left {
+  position: absolute;
+  bottom: 5vh;
+  left: -2vw;
 }
 .container-detail {
   display: flex;
@@ -346,6 +370,13 @@ input#file-video{
   background: none;
   border: none;
 }
+.bg-nav{
+  background-color: #efc81a;
+  border-radius: 0px 0px 10px 10px;
+}
+.mt-row{
+  margin-top: -5%;
+}
 .bg-pop {
   background-color: #fff5ec;
   margin-top: 20vh;
@@ -533,7 +564,8 @@ input#file-video{
   font-family: "AirBk";
   font-size: 18px !important;
   width: 100% !important;
-  height: 10vh !important;
+  height: 8vh !important;
+  margin-bottom: 2vh;
 }
 .title-size {
   font-size: 50px !important;

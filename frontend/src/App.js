@@ -25,8 +25,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+         <Route path="dashboard/profile" element={<Profile/>}/>
          <Route path="profile" element={<Profile/>}/>
          <Route path="detail/:id" element={<Recipe />}/>
+         <Route path="dashboard/add" element={<AddRecipe/>}/>
          <Route path="add" element={<AddRecipe/>}/>
          <Route path="/" element={<Home />}/>
         <Route path={process.env.REACT_APP_PATH_LOGIN} element={<Login />} />
