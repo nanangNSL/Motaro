@@ -7,6 +7,11 @@ exports.searchAllUsers = async () => {
     return posts;
   };
 
+  exports.searchAllRecipe = async (search) => {
+    const posts = await searchModel.searchAllRecipe(search);
+    return posts;
+  };
+
 exports.searchUsersByEmail = async (email) => {
     const posts = await searchModel.searchUserByEmail(email);
     return posts;

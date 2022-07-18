@@ -3,6 +3,7 @@ const search = require("../controllers/searchController");
 const comment = require("../controllers/commentController");
 const recipe = require("../controllers/recipeController.js");
 const video = require("../controllers/videoController");
+const getData = require("../controllers/urlPagination")
 const {
   imageUploadUser,
   imageUploadRecipe,
@@ -25,6 +26,9 @@ module.exports = (route) => {
 
   // search for users
   route.get("/motaro/find", search.searchAllUsers);
+
+  // search for url pagination
+  route.get("/search", getData.getData );
 
   //search for admin
   route.get("/admin/:email", verifyToken, search.searchByUserEmail);
