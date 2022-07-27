@@ -45,6 +45,7 @@
 .container-footer {
   background-color: #efc81a !important;
 }
+
 .jumbroton-popular {
   height: 100vh;
 }
@@ -71,9 +72,15 @@
   background-color: #efc81a !important;
   color: #efc81a !important;
 }
-.ms-card{
-  margin-left: 9vw;
+
+ 
+.card-pop{
+  display: inline-block;
+  border: none;
+  background: none;
+  overflow: hidden;
 }
+
 .banner-pop {
   border-left: 15px solid #efc81a !important;
   color: #2e266f;
@@ -82,6 +89,26 @@
   border: none;
   margin-left: 8vw;
   margin-top: 5vh;
+}
+@media only screen and (max-width: 600px) {
+  .banner-pop {
+    border-left: 15px solid #efc81a !important;
+    margin-left: 2vw;
+    margin-top: 3vh;
+    min-height: 10px;
+  }
+}
+.row-popular{
+  border: 1px solid #efc81a ;
+  width: 80vw;
+  height: 50vh;
+  position: relative;
+}
+.row-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
 }
 .banner-pop-footer {
   border-left: 15px solid #efc81a !important;
@@ -92,8 +119,8 @@
   margin-left: 3vw;
 }
 .img-pop{
-  width: 19rem;
-  height: 15rem;
+  width: 15rem;
+  height: 13rem;
 
 }
 .col-pagi{
@@ -121,6 +148,13 @@
   position: absolute;
   bottom: 5vh;
   left: -2vw;
+}
+.bottom-left-small {
+  position: absolute;
+  bottom: 3vh;
+  left: 2vw;
+  color: #ffffff;
+  font-family: "AirBk";
 }
 .container-detail {
   display: flex;
@@ -349,26 +383,11 @@ input#file-video{
   background-color: #efc81a;
   border-radius: 0rem;
 }
-.jumbroton-new {
-  margin-top: 4vh;
-  float: left;
-  width: 1000px !important;
-}
+
 .lineNew {
   width: 6vw;
   height: 2px !important;
   background-color: #3f3a3a !important;
-}
-.card-bodyNew {
-  margin-top: 35vh;
-  padding: 10%;
-  font-family: "AirBk";
-  font-weight: 10px;
-}
-.image-new {
-  margin: 10% 20%;
-  background: none;
-  border: none;
 }
 .bg-nav{
   background-color: #efc81a;
@@ -379,10 +398,12 @@ input#file-video{
 }
 .bg-pop {
   background-color: #fff5ec;
-  margin-top: 20vh;
+  margin-top: -5vh;
+  padding-top: 2vh;
 }
 .bg-new {
   background-color: #fff5ec;
+  margin-top: -5vh;
 }
 .bg-white {
   background-color: #ffffff;
@@ -391,6 +412,90 @@ input#file-video{
   background-color: #efc81a;
   color: #fff5ec;
   border: none;
+}
+.navbar-mobile{
+  border-radius: 20px 20px 0px 0px;
+  background-color:#FEFEFE !important;
+  height: 20vh;
+  width: 0;
+  width: -webkit-fill-available;
+}
+.btn-mobile{
+  font-family: "AirBk";
+  background-color:  #E5E5E5;
+  color: #efc81a;
+  width: 23vw;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  padding-left: 7px;
+  padding-right: 5px;
+  padding-top: 16px;
+  border: none;
+  border-radius: 15px;
+  margin: 1%;
+  position: relative;
+  overflow: hidden;
+  height: 7vh;  
+}
+
+.btn-mobile .icon {
+  color: #6E80B0;
+}
+.btn-mobile:hover {
+  background-color: #efc81a;
+  color: #6E80B0;
+}
+.img-mobile{
+  width: 8rem;
+  border-radius: 10px !important;
+}
+.container-mobile{
+  width: 93vw;
+  border-radius: 10px;
+  margin-left: 2vw;
+}
+.footer-title{
+  font-family: "Airbk";
+  color: #B6B6B6;
+  margin-top: 1vh;
+}
+.title-mobile{
+  margin-top: 1vh;
+  font-family: "AirBd";
+  color: #666666;
+}
+.rating-mobile{
+  color: #efc81a;
+}
+.search-mobile{
+  height: 23vh;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+.search-mobile .search{
+  background-color: #EFEFEF;
+  width: 80vw;
+  height: 8vh;
+  border-radius: 10px;
+}
+.form-mobile{
+  margin-top: 13vh;
+  overflow: hidden;
+}
+.rating-mobile small{
+  margin-left: 2vw;
+  font-family: "airBd";
+  color:#666666 ;
+}
+.over-scroll{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+  max-width: 83vw;
+}
+.over-scroll::-webkit-scrollbar {
+  display: none;
 }
 .card-titleNew {
   font-size: 48px;

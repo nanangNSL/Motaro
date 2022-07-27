@@ -8,11 +8,15 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 import Nav from "react-bootstrap/Nav";
+import { useMediaQuery } from "react-responsive";
+import { AiFillStar } from "react-icons/ai";
+import { FiSearch } from "react-icons/fi";
+import Navbar from "react-bootstrap/Navbar";
 
 const JumbrotonGrid = () => {
   const [recipe, setRecipe] = useState([]);
   const [page, setPage] = useState(0);
-  const [limit, setLimit] = useState(6);
+  const [limit, setLimit] = useState(8);
   const [pages, setPages] = useState(0);
   const [rows, setRows] = useState(0);
   const [keyword, setKeyword] = useState("");
@@ -22,6 +26,15 @@ const JumbrotonGrid = () => {
   useEffect(() => {
     getRecipe();
   }, [page, keyword]);
+
+  const Mobile = ({ children }) => {
+    const isMobile = useMediaQuery({ maxWidth: 428 });
+    return isMobile ? children : null;
+  };
+  const Default = ({ children }) => {
+    const isNotMobile = useMediaQuery({ minWidth: 429 });
+    return isNotMobile ? children : null;
+  };
 
   const getRecipe = async () => {
     const response = await axios.get(
@@ -52,68 +65,120 @@ const JumbrotonGrid = () => {
   };
 
   return (
-    <Container fluid className="bg-new">
-      <Container>
-        <Card body className="banner-pop-footer">
-          <h1 style={{ fontSize: "30px" }}>Popular For You !</h1>
+    <>
+      <Mobile>
+        <Container
+          fluid
+          className="sticky-top shadow position-fixed top-0 start-50 translate-middle search-mobile"
+        >
           <Form
             onSubmit={searchData}
-            className="d-flex justify-content-end position-absolute top-0 end-0 mt-3"
-          >
+            className="form-mobile"
+          > 
             <Form.Control
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Find something here..."
-              className="me-2 width-search"
+             
+              placeholder="🔍 Search Pasta, Bread, etc..."
+              className="search"
             />
             <Button className="col-search" type="submit">
-              Search
-            </Button>
+                  Search
+                </Button>
           </Form>
-        </Card>
-        <Row className="d-flex p-2 justify-content-center overflow-hidden">
+        </Container>
+
+        <section className="section mt-5 mb-5 d-flex flex-column">
           {recipe.map((data) => (
-            <Card
-              className="m-2 border-0 img-pop p-2 top justify-content-center  bg-transparent"
+            <div
               key={data.recipe_id}
+              className="d-flex flex-end  container-mobile shadow p-3 mb-2 bg-body rounded"
             >
-              <Link to={`detail/${data.recipe_id}`}>
-                <Card.Img
-                  variant="top"
-                  src={data.image}
-                  className="rounded img-pop shadow"
-                />
-                <Card.Title className="position-absolute bottom-left">
-                  {data.title}
-                </Card.Title>
-              </Link>
-            </Card>
+              <div className="col-5">
+                <img alt="Web Studio" className="img-mobile" src={data.image} />
+              </div>
+              <div className="ms-3">
+                <div className="title-mobile">
+                  <small>{data.title}</small>
+                </div>
+                <div className="footer-title">
+                  <small>food, healty</small>
+                </div>
+                <div className="rating-mobile">
+                  <AiFillStar />
+                  <small>4.7</small>
+                </div>
+              </div>
+            </div>
           ))}
-        </Row>
-        <p className="total">
-          Total Rows: {rows} Page: {rows ? page + 1 : 0} of {pages}
-        </p>
-        <p className="text-center">{msg}</p>
-        <Nav
-          aria-label="Page navigation example"
-          className="pagination justify-content-center"
-        >
-          <ReactPaginate
-            previousLabel={"< Prev"}
-            nextLabel={"Next >"}
-            pageCount={Math.min(10, pages)}
-            onPageChange={changePage}
-            containerClassName={"pagination "}
-            pageLinkClassName={"page-item page-link col-page"}
-            previousLinkClassName={"page-item page-link   col-page"}
-            nextLinkClassName={"page-item page-link col-page"}
-            activeLinkClassName={"page-item active col-pagi"}
-            disabledLinkClassName={"page-item disabled"}
-          />
-        </Nav>
-      </Container>
-    </Container>
+        </section>
+      </Mobile>
+      <Default>
+        <Container fluid className="bg-new">
+          <Container>
+            <Card body className="banner-pop-footer">
+              <h1 style={{ fontSize: "30px" }}>Popular For You !</h1>
+              <Form
+                onSubmit={searchData}
+                className="d-flex justify-content-end position-absolute top-0 end-0 mt-3"
+              >
+                <Form.Control
+                  type="search"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Find something here..."
+                  className="me-2 width-search"
+                />
+                <Button className="col-search" type="submit">
+                  Search
+                </Button>
+              </Form>
+            </Card>
+            <Row className="d-flex p-2 justify-content-center overflow-hidden">
+              {recipe.map((data) => (
+                <Card
+                  className="m-2 border-0 img-pop p-2 top justify-content-center  bg-transparent"
+                  key={data.recipe_id}
+                >
+                  <Link to={`detail/${data.recipe_id}`}>
+                    <Card.Img
+                      variant="top"
+                      src={data.image}
+                      className="rounded img-pop shadow"
+                    />
+                    <Card.Title className="position-absolute bottom-left">
+                      {data.title}
+                    </Card.Title>
+                  </Link>
+                </Card>
+              ))}
+            </Row>
+            <p className="total">
+              Total Rows: {rows} Page: {rows ? page + 1 : 0} of {pages}
+            </p>
+            <p className="text-center">{msg}</p>
+            <Nav
+              aria-label="Page navigation example"
+              className="pagination justify-content-center"
+            >
+              <ReactPaginate
+                previousLabel={"< Prev"}
+                nextLabel={"Next >"}
+                pageCount={Math.min(10, pages)}
+                onPageChange={changePage}
+                containerClassName={"pagination "}
+                pageLinkClassName={"page-item page-link col-page"}
+                previousLinkClassName={"page-item page-link   col-page"}
+                nextLinkClassName={"page-item page-link col-page"}
+                activeLinkClassName={"page-item active col-pagi"}
+                disabledLinkClassName={"page-item disabled"}
+              />
+            </Nav>
+          </Container>
+        </Container>
+      </Default>
+    </>
   );
 };
 
