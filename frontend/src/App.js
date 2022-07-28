@@ -18,7 +18,6 @@ import "./style/fonts/AirbnbCereal_W_XBd.otf";
 import Recipe from "./Pages/Detail/Recipe";
 import Profile from "./Pages/Detail/Profile";
 
-
 axios.defaults.withCredentials = true;
 
 function App() {

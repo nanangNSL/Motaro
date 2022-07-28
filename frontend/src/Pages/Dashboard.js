@@ -3,8 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 import Navbar from "../components/Navbar"
-import TempLayout from "../components/template/TempLayoutWhite";
-import Jumbroton from "../components/jumbroton/JumbrotonWhite";
+import Carousell from "../components/Carousell";
 import Footer from "../components/footer/Footer";
 import JumbrotonNew from "../components/jumbroton/JumbrotonNew";
 import JumbrotonPopular from "../components/jumbroton/JumbrotonPopular";
@@ -65,9 +64,8 @@ const Dashboard = () => {
 
   return (
     <>
-    <TempLayout/>
      <Navbar/>
-      <Jumbroton/> 
+     <Carousell/>
       <JumbrotonPopular/>
       <JumbrotonNew/>
       <JumbrotonGrid/>

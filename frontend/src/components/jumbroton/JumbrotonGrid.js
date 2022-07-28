@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef  } from "react";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -10,8 +10,7 @@ import ReactPaginate from "react-paginate";
 import Nav from "react-bootstrap/Nav";
 import { useMediaQuery } from "react-responsive";
 import { AiFillStar } from "react-icons/ai";
-import { FiSearch } from "react-icons/fi";
-import Navbar from "react-bootstrap/Navbar";
+import gambar from "../../style/images/search.png";
 
 const JumbrotonGrid = () => {
   const [recipe, setRecipe] = useState([]);
@@ -22,6 +21,8 @@ const JumbrotonGrid = () => {
   const [keyword, setKeyword] = useState("");
   const [query, setQuery] = useState("");
   const [msg, setMsg] = useState("");
+
+  const scollToRef = useRef(null);
 
   useEffect(() => {
     getRecipe();
@@ -71,48 +72,52 @@ const JumbrotonGrid = () => {
           fluid
           className="sticky-top shadow position-fixed top-0 start-50 translate-middle search-mobile"
         >
-          <Form
-            onSubmit={searchData}
-            className="form-mobile"
-          > 
+          <Form onSubmit={searchData} className="form-mobile">
             <Form.Control
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-             
-              placeholder="🔍 Search Pasta, Bread, etc..."
+              placeholder="Search Pasta, Bread, etc..."
               className="search"
             />
-            <Button className="col-search" type="submit">
-                  Search
-                </Button>
+            <Button className="btn-search-top" onClick={() => scollToRef.current.scrollIntoView()}>
+            <Card.Img
+                        variant="top"
+                        src={gambar}
+                        className="icon"
+                      />
+            </Button>
           </Form>
         </Container>
-
-        <section className="section mt-5 mb-5 d-flex flex-column">
-          {recipe.map((data) => (
-            <div
-              key={data.recipe_id}
-              className="d-flex flex-end  container-mobile shadow p-3 mb-2 bg-body rounded"
-            >
-              <div className="col-5">
-                <img alt="Web Studio" className="img-mobile" src={data.image} />
+          <section ref={scollToRef} className="section mt-5 mb-5 d-flex flex-column">
+            {recipe.map((data) => (
+              <div
+                key={data.recipe_id}
+                className="d-flex flex-end  container-mobile shadow p-3 mb-2 bg-body rounded"
+              >
+               
+                <div className="col-5">
+                  <img
+                    alt="Web Studio"
+                    className="img-mobile"
+                    src={data.image}
+                  />
+                </div>
+                <div className="ms-3">
+                  <div className="title-mobile">
+                    <small>{data.title}</small>
+                  </div>
+                  <div className="footer-title">
+                    <small>food, healty</small>
+                  </div>
+                  <div className="rating-mobile">
+                    <AiFillStar />
+                    <small>4.7</small>
+                  </div>
+                </div>
               </div>
-              <div className="ms-3">
-                <div className="title-mobile">
-                  <small>{data.title}</small>
-                </div>
-                <div className="footer-title">
-                  <small>food, healty</small>
-                </div>
-                <div className="rating-mobile">
-                  <AiFillStar />
-                  <small>4.7</small>
-                </div>
-              </div>
-            </div>
-          ))}
-        </section>
+            ))}
+          </section>
       </Mobile>
       <Default>
         <Container fluid className="bg-new">

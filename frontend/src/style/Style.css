@@ -90,16 +90,52 @@
   margin-left: 8vw;
   margin-top: 5vh;
 }
-@media only screen and (max-width: 600px) {
-  .banner-pop {
-    border-left: 15px solid #efc81a !important;
-    margin-left: 2vw;
-    margin-top: 3vh;
-    min-height: 10px;
-  }
+.banner-pop-mobile {
+  color: #2e266f;
+  font-family: "AirBd";
+  background: none;
+  border: none;
+  /* margin-left: 8vw; */
+  margin-top: 3vh;
+}
+.banner-new-mobile {
+  color: #2e266f;
+  font-family: "AirBd";
+  background: none;
+  border: none;
+  /* margin-left: 8vw; */
+  margin-top: 5vh;
+}
+.bg-new-mobile{
+  border: 1px solid gray;
+  background-color: #57CE96;
+  border-radius: 10px;
+  width: 30vw;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  margin-left: -4vw;
+}
+.container-mini{
+  width: 32vw;
+  overflow: hidden;
+  padding: 2%;
+  border-radius: 10px;
+}
+.bg-new-mobile .icon{
+  margin-top: 1vh;
+ width: 6rem;
+ height: 90%;
+ font-size: 100%
+}
+.title-mini-mobile{
+width: 32vw ;
+margin-left: -1vw;
+font-family: "AirBd";
+font-size: smaller;
+text-align: center;
 }
 .row-popular{
-  border: 1px solid #efc81a ;
   width: 80vw;
   height: 50vh;
   position: relative;
@@ -121,6 +157,12 @@
 .img-pop{
   width: 15rem;
   height: 13rem;
+
+}
+.img-pop-mobile{
+  width: 17rem;
+  height: 13rem;
+  border-radius: 10% !important;
 
 }
 .col-pagi{
@@ -148,6 +190,14 @@
   position: absolute;
   bottom: 5vh;
   left: -2vw;
+}
+.bottom-left-mobile {
+  position: absolute;
+  bottom: 2vh;
+  left: 7vw;
+  width: 200px;
+  font-family: "airBd";
+  color: #e7e7e7;
 }
 .bottom-left-small {
   position: absolute;
@@ -422,7 +472,7 @@ input#file-video{
 }
 .btn-mobile{
   font-family: "AirBk";
-  background-color:  #E5E5E5;
+  background-color:  #FEFEFE;
   color: #efc81a;
   width: 23vw;
   display: flex;
@@ -440,7 +490,7 @@ input#file-video{
 }
 
 .btn-mobile .icon {
-  color: #6E80B0;
+  margin-top: -1vh;
 }
 .btn-mobile:hover {
   background-color: #efc81a;
@@ -460,6 +510,81 @@ input#file-video{
   color: #B6B6B6;
   margin-top: 1vh;
 }
+.container-login-mobile{
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+.container-login-mobile form{
+   
+   height: 60vh;
+   margin-top: 20vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   justify-items: center;
+   border: 1px solid tomato;
+   padding: 5%;
+   overflow: hidden;
+   font-family: "AirBd";
+   color: #999999;
+}
+.section-mobile{
+  width: 50vw;
+  font-family: "AirBd";
+  color: #FFFFFF;
+}
+.section-mobile h3{
+  font-family: "AirBd";
+  font-size: 24px !important;
+  color: #EFEFEF;
+}
+.social-mobile{
+  margin-left: 18vw !important;
+  margin-top: 5vh;
+  display: flex;
+
+}
+.social-mobile .icon{
+  color: #efc81a;
+  padding: 7%;
+  margin: 2%; 
+  width: 30px;
+  height: 30px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+}
+.social-mobile .icon:nth-child(1){
+  color: #FFFFFF;
+  background-color: #efc81a;
+
+}
+.icon-back{
+  position: absolute;
+  margin-top: 4vh;
+  font-size: 30px;
+  margin-left: 4vw;
+  color: #EFEFEF;
+}
+.container-title-mobile{
+  position: absolute;
+  width: 90vw;
+  height: 40%;
+  overflow: hidden;
+  margin-top: 22vh;
+  margin-left: 5vw;
+  display: flex;
+  flex-direction: row;
+}
+.recipe-title{
+  font-family: "Airbk";
+  color: #B6B6B6;
+  margin-top: 2vh;
+  margin-left: 1vh;
+}
 .title-mobile{
   margin-top: 1vh;
   font-family: "AirBd";
@@ -469,25 +594,80 @@ input#file-video{
   color: #efc81a;
 }
 .search-mobile{
-  height: 23vh;
+  height: 25vh;
   display: flex;
   justify-content: center;
   justify-items: center;
+  flex-grow:2;
+  background-color: #ffffff;
 }
-.search-mobile .search{
+.search{
+  flex-grow:2;
+  border:none;
+  overflow: hidden;
   background-color: #EFEFEF;
-  width: 80vw;
-  height: 8vh;
-  border-radius: 10px;
+}
+.search:focus{
+  outline: none;
 }
 .form-mobile{
-  margin-top: 13vh;
+  margin-top: 14vh;
+  display:flex;
+  flex-direction:row;
+  padding:2px;
+  width: 90vw;
+  border-radius: 15px;
+  height: 4rem;
   overflow: hidden;
+  background-color:#EFEFEF;
+}
+.form-mobile .btn-search-top {
+  background-color: #EFEFEF;
+  position: absolute;
+  border-radius: 30rem;
+  border: none;
+  width: 7vh;
+  height: 7vh;
+  right: 7vw;
+  margin-top: 1vh;
+}
+.image-recipe-mobile{
+  width: 100vw !important;
+  margin: -6%;
+}
+.card-body-mobile{
+  z-index: 4;
+  background-color: #FFFFFF;
+  border-radius: 15px 15px 0px 0px ;
+}
+.button-video-mobile{
+  border-radius: 15px;
+  display: flex;
+}
+.button-video-mobile .button-modal{
+  width: 25vw;
+  border-radius: 15px;
+}
+button .icon{
+  width: 6vw;
+  height: 4vh;
+}
+button .icon:hover{
+background-color: #EFEFEF ;
 }
 .rating-mobile small{
   margin-left: 2vw;
   font-family: "airBd";
   color:#666666 ;
+}
+.recipe-mobile{
+  margin-top: -5% !important;
+  margin-left: 2vw;
+  font-family: "airBd";
+  color:#666666 ;
+}
+.carousel-mobile{
+  margin-top: 12vh;
 }
 .over-scroll{
   -ms-overflow-style: none;  /* IE and Edge */
@@ -497,6 +677,15 @@ input#file-video{
 .over-scroll::-webkit-scrollbar {
   display: none;
 }
+.over-scroll-mobile{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
+  max-width: 90vw;
+}
+.over-scroll-mobile::-webkit-scrollbar {
+  display: none;
+}
+
 .card-titleNew {
   font-size: 48px;
   color: #3f3a3a;
@@ -621,6 +810,14 @@ input#file-video{
   font-size: 12px !important;
   font-family: "AirBk";
 }
+.input-mobile{
+  width: 80vw;
+  height: 8vh;
+}
+.check-mobile{
+  margin-left: -27%;
+}
+
 .input-login:focus {
   font-size: 12px !important;
   font-family: "AirBk";
