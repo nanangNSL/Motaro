@@ -261,7 +261,8 @@ text-align: center;
   justify-content: center;
 }
 .image-profile {
-  width: 15rem;
+  width: 14rem;
+  height: 14rem;
   border-radius: 50%;
 }
 .button-video {
@@ -488,9 +489,17 @@ input#file-video{
   overflow: hidden;
   height: 7vh;  
 }
+.btn-mobile-login{
+  background-color: #efc81a;
+  border: none;
+  width: 80vw;
+  margin-left: -5vw;
+  padding: 5%;
+}
 
 .btn-mobile .icon {
   margin-top: -1vh;
+  border: none;
 }
 .btn-mobile:hover {
   background-color: #efc81a;
@@ -511,26 +520,25 @@ input#file-video{
   margin-top: 1vh;
 }
 .container-login-mobile{
-  border: 1px solid gray;
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  
 }
 .container-login-mobile form{
    
-   height: 60vh;
-   margin-top: 20vh;
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
    justify-items: center;
-   border: 1px solid tomato;
    padding: 5%;
-   overflow: hidden;
-   font-family: "AirBd";
+   font-family: "AirBk";
    color: #999999;
+   height: 100vh;
+}
+.image-login{
+  z-index: 100;
 }
 .section-mobile{
   width: 50vw;
@@ -749,6 +757,13 @@ background-color: #EFEFEF ;
 .mini-text {
   font-size: 12px !important;
 }
+.mini-text-mobile {
+  font-size: 12px !important;
+  display: flex;
+  justify-content: end;
+  justify-items: end;
+  margin-right: -55vw;
+}
 .title-login {
   color: #efc81a;
   font-family: "AirBlk";
@@ -815,7 +830,7 @@ background-color: #EFEFEF ;
   height: 8vh;
 }
 .check-mobile{
-  margin-left: -27%;
+  margin-left: -21%;
 }
 
 .input-login:focus {

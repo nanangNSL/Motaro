@@ -8,7 +8,9 @@ import Card from "react-bootstrap/Card";
 import axios from "axios";
 import "../style/Style.css";
 import cooke from "../style/images/cooke.png";
+import login from "../style/images/login.png";
 import { useMediaQuery } from "react-responsive";
+import Swal from "sweetalert2";
 
 import { useNavigate } from "react-router-dom";
 
@@ -35,9 +37,21 @@ const Login = () => {
         password: password,
       });
       navigate("/Dashboard");
+      Swal.fire(
+        'Good job!',
+        'Login',
+        'success'
+      )
     } catch (error) {
       if (error.response) {
         setMsg(error.response.data.msg);
+      }
+      if(msg){
+        Swal.fire(
+          'Sorry',
+          msg,
+          'error'
+        )
       }
     }
   };
@@ -46,63 +60,61 @@ const Login = () => {
     <>
       <Mobile>
         <Container className="container-login-mobile">
-            <Form onSubmit={Auth}>
-              <Card className="text-center border-0">
-                <Card.Body>
-                  <Card.Title className="title-login">Welcome</Card.Title>
-                  <Card.Text className="title-text">
-                    Log in into your exiting account
-                  </Card.Text>
-                  <Card.Text className="fs-6">{msg}</Card.Text>
-                  <hr className="hr-title" />
-                </Card.Body>
-              </Card>
-              <Form.Group className="mini-text">
-                <Form.Label className="label-login">Email address</Form.Label>
-                <Form.Control
-                  className="input-mobile"
-                  type="email"
-                  placeholder="Enter email"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                />
-              </Form.Group>
-              <></>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label className="label-login">Password</Form.Label>
-                <Form.Control
-                  className="input-mobile"
-                  type="password"
-                  placeholder="password"
-                  value={password}
-                  onChange={(event) => setPassword(event.target.value)}
-                />
-              </Form.Group>
-                <Form.Check
-                  className="check-mobile"
-                  type="checkbox"
-                  label="I agree to terms & conditions"
-                />
-              <Button
-               type="submit">
-                Login
-              </Button>
-              <div className=" mini-text">
-                <p>Forgot Password?</p>
-              </div>
-              <hr className="hr-login" />
-              <Card.Text className="card-name">
-                Don’t have an account?
-                <a
-                  className="link-down"
-                  href={process.env.REACT_APP_PATH_REGISTER}
-                  style={{ color: "#EFC81A" }}
-                >
-                  Sign Up
-                </a>
-              </Card.Text>
-            </Form>
-      
+          <Form onSubmit={Auth}>
+            <Card.Img src={login} alt={"motaro"} className="image-login" />
+            <Card className="text-center border-0">
+              <Card.Body>
+                <Card.Title className="title-login">Welcome</Card.Title>
+                <Card.Text className="title-text">
+                  Log in into your exiting account
+                </Card.Text>
+                <hr className="" />
+              </Card.Body>
+            </Card>
+            <Form.Group className="mini-text">
+              <Form.Label className="label-login">Email address</Form.Label>
+              <Form.Control
+                className="input-mobile"
+                type="email"
+                placeholder="Enter email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
+            </Form.Group>
+            <></>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label className="label-login">Password</Form.Label>
+              <Form.Control
+                className="input-mobile"
+                type="password"
+                placeholder="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+              />
+            </Form.Group>
+            <Form.Check
+              className="check-mobile"
+              type="checkbox"
+              label="I agree to terms & conditions"
+            />
+            <Button type="submit" className="btn-mobile-login">
+              Login
+            </Button>
+            <div className="mini-text-mobile">
+              <p>Forgot Password?</p>
+            </div>
+            <hr className="hr-login" />
+            <Card.Text className="card-name">
+              Don’t have an account?
+              <a
+                className="link-down"
+                href={process.env.REACT_APP_PATH_REGISTER}
+                style={{ color: "#EFC81A" }}
+              >
+                Sign Up
+              </a>
+            </Card.Text>
+          </Form>
         </Container>
       </Mobile>
       <Default>

@@ -13,6 +13,7 @@ const Addrecipe = () => {
   const [Inggredients, setInggredients] = useState("");
   const [video, setVideo] = useState("");
 
+  console.log(image);
   const UploadRecipe = async (e) => {
     e.preventDefault();
     try {
