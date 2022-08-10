@@ -33,7 +33,7 @@ const NavBar = () => {
 
   const getToken = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/token");
+      const response = await axios.get("https://motaro.herokuapp.com/token");
       const data = response.data.accessToken;
       const decoded = jwtDecode(data);
       setName(decoded.name);
@@ -44,7 +44,7 @@ const NavBar = () => {
 
   const Logout = async () => {
     try {
-      await axios.delete("http://localhost:5000/logout");
+      await axios.delete("https://motaro.herokuapp.com/logout");
       navigate("/");
     } catch (error) {
       console.log(error);

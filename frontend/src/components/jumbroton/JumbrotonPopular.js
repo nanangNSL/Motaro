@@ -22,7 +22,7 @@ const JumbrotonPopular = () => {
 
   const getRecipe = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/recipe/get");
+      const response = await axios.get("https://motaro.herokuapp.com/recipe/get");
       setRecipe(response.data.data);
     } catch (error) {
       Swal.fire("sorry", error, "error");

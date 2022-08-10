@@ -17,7 +17,7 @@ const Addrecipe = () => {
   const UploadRecipe = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5000/recipe/insert", {
+      await axios.post("https://motaro.herokuapp.com/recipe/insert", {
         image: image,
         title: title,
         Inggredients: setInggredients,

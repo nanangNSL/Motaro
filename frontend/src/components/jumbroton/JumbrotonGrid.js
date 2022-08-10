@@ -39,7 +39,7 @@ const JumbrotonGrid = () => {
 
   const getRecipe = async () => {
     const response = await axios.get(
-      `http://localhost:5000/search?search_query=${keyword}&page=${page}&limit=${limit}`
+      `https://motaro.herokuapp.com/search?search_query=${keyword}&page=${page}&limit=${limit}`
     );
     setRecipe(response.data.result);
     setPage(response.data.page);

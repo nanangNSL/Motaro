@@ -19,7 +19,7 @@ const Recipe = () => {
   const navigate = useNavigate();
 
   axios
-    .get(`http://localhost:5000/admin/recipe/${id}`)
+    .get(`https://motaro.herokuapp.com/admin/recipe/${id}`)
     .then((response) => {
       const data = response.data.data;
       setImage(data[0].image);

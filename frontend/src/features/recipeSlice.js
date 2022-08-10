@@ -6,7 +6,7 @@ import {
 import axios from "axios";
 
 export const getRecipe = createAsyncThunk("recipe/getRecipe", async () => {
-  const response = await axios.get("http://localhost:5000/recipe/get");
+  const response = await axios.get("https://motaro.herokuapp.com/recipe/get");
   return response.data.data;
 });
 
