@@ -9,7 +9,19 @@ const cookieParser = require("cookie-parser");
 const PORT = 5000;
 
 app.use(cors());
-app.use(cors({ credentials:true, origin:'http://localhost:3000' }));
+const allowlist = ["https://motaro-2020d.web.app", "http://localhost:3000", ];
+const corsOptionsDelegate = function (req, callback) {
+  let corsOptions;
+  if (allowlist.indexOf(req.header("Origin")) !== -1) {
+    corsOptions = { origin: true };
+  } else {
+    corsOptions = { origin: false };
+  }
+  callback(null, corsOptions);
+};
+app.use(cors(corsOptionsDelegate));
+
+
 app.disable("x-powered-by");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
