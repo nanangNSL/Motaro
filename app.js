@@ -8,9 +8,6 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const PORT = 5000;
 
-
-
-
 app.disable("x-powered-by");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -36,6 +33,9 @@ glob.sync("./api/routes/Route.js").forEach((file) => {
 
 app.use(errorController.notFound);
 app.use(errorController.error);
+app.get('/', (req, res) => {
+  res.send('Hello moms')
+})
 
 app.listen(process.env.PORT || `${PORT}`, () => {
   console.log(
