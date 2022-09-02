@@ -17,9 +17,9 @@ const allowlist = ["https://motaro-2020d.web.app", "http://localhost:3000", "htt
 const corsOptionsDelegate = function (req, callback) {
   let corsOptions;
   if (allowlist.indexOf(req.header("Origin")) !== -1) {
-    corsOptions = { origin: true };
+    corsOptions = { origin: true,  credentials: true };
   } else {
-    corsOptions = { origin: false };
+    corsOptions = { origin: false,  credentials: true };
   }
   callback(null, corsOptions);
 };
@@ -33,9 +33,7 @@ glob.sync("./api/routes/Route.js").forEach((file) => {
 
 app.use(errorController.notFound);
 app.use(errorController.error);
-app.get('/', (req, res) => {
-  res.send('Hello moms')
-})
+
 
 app.listen(process.env.PORT || `${PORT}`, () => {
   console.log(

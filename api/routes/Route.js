@@ -20,9 +20,9 @@ module.exports = (route) => {
   route.post("/login",   Login);
   route.delete("/logout",   Logout);
   route.get("/token",   refreshToken);
-  // route.get("*", (req, res) => {
-  //   res.json("sukses boss");
-  // });
+  route.get("*", (req, res) => {
+    res.json("sukses boss");
+  });
 
   // search for users
   route.get("/motaro/find", search.searchAllUsers);
