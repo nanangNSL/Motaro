@@ -27,6 +27,13 @@
   <li>etc.</li>
 </ul>
 
+<pre><code></code> </pre>
+<p></p>
+<ul></ul>
+<li></li>
+<a href=""><a>
+
+
 <h3 id=built>Made With</h3>
 <ul>
   <li>Express JS</li>
@@ -35,34 +42,58 @@
    <li>Axios</li>
    <li>Multer</li>
    <li>JWT token</li>
-   <li>Multer</li>
+   <li>Redis AWS Cloud</li>
+  <li>Cloudinary (For media storage)</li>
+  <li>Etc.</li>
 </ul>
 <h3 id=getting>Getting started</h3>
 <ul>
    <li>
      <h4 id=Prerequisites>Prerequiresites</h4>
      <ul>
-       <li>npm</li>
-       <code>npm install npm@latest -g</code>
+       <li>Downloading and installing Node.js and npm or you can use command:</li>
+       <pre><code>npm install npm@latest -g</code> </pre>
+       <li>Checking your version of npm and Node.js</li>
+       <p>To see if you already have Node.js and npm installed and check the installed version, run the following commands:</p>
+       <pre><code>node -v</code></pre>
+        <pre><code>npm -v</code></pre>
+       <p>In this project I use <code>version v16.15.1</code></p> 
+       <li>Set up multiple accounts for configuration
+       <ul>
+         <li><a href="https://cloudinary.com/">Cloudinary<a></li>
+         <li><a href="https://app.redislabs.com/#/login">Redis Cloud<a></li>
+         </ul>
+       </li>
      </ul>
   </li>
   <li>
      <h4 id=Installation>Intalation</h4>
       <ul>
-        <li>Clone project</li>
-         <code>git clone https://github.com/nanangNSL/Motaro.git</code>
-        <li>Install all dependencies</li>
-         <code>npm install</code>
-       <li>Settup <code>.env</code></li>
+        <li>Clone project
+          <ul>
+             <li>Backend (server) || or you can use an endpoint server 👉<code><a href="https://motaro.herokuapp.com">link<a></code> 
+             <pre><code>git clone -b deployment https://github.com/nanangNSL/Motaro.git</code> </pre>
+             </li>
+            <li>Backend (server)
+             <pre><code>git clone -b add-responsive https://github.com/nanangNSL/Motaro.git</code> </pre>
+             </li>
+          </ul>
+        </li>
+        <li>Install all dependencies
+             <pre><code>npm install</code> </pre>
+            </li>
+       <li>Settup <code>.env.example</code></li>
          <code>Fill all secret keys</code>
-          <li>Settup database in doc/motaro psql </li>
-         <code>psql -U postgres -p 5432 -h localhost -d db_name -f motaro.psql</code>
+          <li>Settup database in doc/motaro.psql </li>
+             <pre><code>psql -U postgres -p 5432 -h localhost -d db_name -f motaro.psql</code> </pre>
          <li>Run project</li>
-         <code>npm start</code>
+            <pre><code>npm start</code></pre>
       </ul>
    </li>
-</ul>
+</ul> 
+    
 <h3 id=License>License</h3>
 <ul>
-  <li><code><a href="https://github.com/nanangNSL/motaro-express-postgre/blob/main/LICENSE">MIT</a></code></li>
+  <li><code><a href="https://github.com/nanangNSL/Motaro/blob/main/LICENSE">MIT</a></code></li>
 </ul>
+<p>Happy code!☕</p>
