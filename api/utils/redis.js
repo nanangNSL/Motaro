@@ -4,16 +4,11 @@ require('dotenv').config()
 
 let redisClient;
 (async () => {
-    if(process.env.MODE_ENV === "production"){
-        redisClient = redis.createClient({
-    host: process.env.REDIS_HOSTNAME,
-    port: process.env.REDIS_PORT,
-    password: process.env.REDIS_PASSWORD
-})
-    }else{
-        redisClient = redis.createClient();
-    }
-   
+   redisClient = redis.createClient({
+    host: process?.env?.REDIS_HOSTNAME,
+    port: process?.env?.REDIS_PORT,
+    AUTH: process?.env?.REDIS_AUTH
+});
 
   redisClient.on("error", (error) => console.error(`Error : ${error}`));
 
