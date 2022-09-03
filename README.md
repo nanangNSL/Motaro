@@ -27,13 +27,6 @@
   <li>etc.</li>
 </ul>
 
-<pre><code></code> </pre>
-<p></p>
-<ul></ul>
-<li></li>
-<a href=""><a>
-
-
 <h3 id=built>Made With</h3>
 <ul>
   <li>Express JS</li>
