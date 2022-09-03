@@ -3,8 +3,8 @@ const db = require("../utils/db");
 exports.insert = async (data) => {
   let date = new Date().toISOString().split("T")[0];
   const row = await db.query(
-    `INSERT INTO comment(user_id, comment, create_at) VALUES ($1, $2, $3)`,
-    [data.user_id, data.comment, date]
+    `INSERT INTO comment(user_id, comment, create_at, recipe_id) VALUES ($1, $2, $3, $4)`,
+    [data.user_id, data.comment, date, recipe_id]
   );
   if (row.affectedRows === 0) {
     return null;

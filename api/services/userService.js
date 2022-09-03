@@ -1,9 +1,8 @@
-const { request } = require('express');
 const usersModel = require('../models/userModel');
 const motaroValidator = require('../validators/motaroValidator');
 
 exports.insert = async (data) => {
-  motaroValidator(data, ['name', 'image', 'email', 'phonenumber', 'password', 'my_recipe', 'save_recipe', 'like_recipe']);
+  motaroValidator(data, ['name', 'image', 'email', 'phonenumber', 'password']);
   const post = await usersModel.insert(data);
   return post;
 };

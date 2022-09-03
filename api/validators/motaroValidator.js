@@ -7,9 +7,6 @@ const Post = schema.object({
   email: schema.string().email(),
   phonenumber: schema.number(),
   password: schema.string(),
-  my_recipe: schema.number(),
-  save_recipe: schema.number(),
-  like_recipe: schema.number(),
 
   // schema. for comment
   id: schema.number(),
@@ -18,10 +15,9 @@ const Post = schema.object({
 
   // schema. for recipe
   recipe_id: schema.number(),
-  title: schema.string() ,
+  title: schema.string().max(30) ,
   image: schema.string(),
   inggredients: schema.string(),
-  video: schema.number(),
   date: schema.string(),
 
   // schema. for video

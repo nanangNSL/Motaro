@@ -1,10 +1,14 @@
 const recipeService = require('../services/recipeServices');
+const cloudinary = require("../utils/cloudinary");
 
 exports.insert = async (request, response, next) => {
   try {
-    const fileName = request.file.filename;
-    const url = `${request.protocol}://${request.get('host')}/public/${fileName}`;
-    const data = await recipeService.insert({...request.body, image: url});
+    const filePath = request?.file?.path;
+      const uploadCloud = await cloudinary.uploader.upload(filePath, {
+        folder: 'motaro-image'
+      })
+      const  imageRecipe = uploadCloud.secure_url
+    const data = await recipeService.insert({...request.body, image: imageRecipe});
       response.json({ data });
   } catch (error) {
     next(error);
@@ -23,10 +27,12 @@ exports.select = async (request, response, next) => {
 
 exports.update = async (request, response, next) => {
   try {
- 
-    const fileName = request.file.filename;
-    const url = `${request.protocol}://${request.get('host')}/public/${fileName}`;
-    const data = await recipeService.update(request.params.id, {...request.body, image: url});
+    const filePath = request?.file?.path;
+    const uploadCloud = await cloudinary.uploader.upload(filePath, {
+      folder: 'motaro-image'
+    })
+    const  imageRecipe = uploadCloud.secure_url
+    const data = await recipeService.update(request.params.id, {...request.body, image: imageRecipe});
     if (!data) { next(); } else { response.json({ data }); }
   } catch (error) {
     next(error);

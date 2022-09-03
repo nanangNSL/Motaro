@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const PORT = 5000;
 
+
 app.disable("x-powered-by");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,6 +25,7 @@ const corsOptionsDelegate = function (req, callback) {
   callback(null, corsOptions);
 };
 app.use(cors(corsOptionsDelegate));
+
 
 
 app.use("/public", express.static("public"));

@@ -2,7 +2,7 @@ const recipeModel = require('../models/recipeModel');
 const motaroValidator = require('../validators/motaroValidator');
 
 exports.insert = async (data) => {
-  motaroValidator(data, ['title', 'image', 'inggredients', 'video',]);
+  motaroValidator(data, ['title', 'image', 'inggredients',]);
   const post = await recipeModel.insert(data);
   return post;
 };

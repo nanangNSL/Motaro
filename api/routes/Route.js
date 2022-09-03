@@ -12,6 +12,7 @@ const {
 const { Register, Login, Logout } = require("../controllers/authController");
 const { verifyToken } = require("../middleware/verifyToken");
 const { refreshToken } = require("../controllers/refreshToken");
+const {cacheData } = require("../middleware/cacheData")
 
 
 module.exports = (route) => {
@@ -20,9 +21,6 @@ module.exports = (route) => {
   route.post("/login",   Login);
   route.delete("/logout",   Logout);
   route.get("/token",   refreshToken);
-  // route.get("*", (req, res) => {
-  //   res.json("sukses boss");
-  // });
 
   // search for users
   route.get("/motaro/find", search.searchAllUsers);
@@ -32,10 +30,10 @@ module.exports = (route) => {
 
   //search for admin
   route.get("/admin/:email", verifyToken, search.searchByUserEmail);
-  route.get("/admin/id/:id",  search.searchById);
-  route.get("/admin/comment/:id", verifyToken, search.searchCommentById);
-  route.get("/admin/recipe/:id", search.searchRecipeId);
-  route.get("/admin/video/:id", verifyToken, search.searchVideoId);
+  route.get("/admin/id/:id",  cacheData ,search.searchById);
+  route.get("/admin/comment/:id",cacheData,  verifyToken, search.searchCommentById);
+  route.get("/admin/recipe/:id", cacheData, search.searchRecipeId);
+  route.get("/admin/video/:id",cacheData , verifyToken, search.searchVideoId);
 
   // profile
   route.post("/profile/insert", verifyToken, imageUploadUser, users.insert);

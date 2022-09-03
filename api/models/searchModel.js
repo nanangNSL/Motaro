@@ -1,15 +1,14 @@
-const { request } = require("express");
 const db = require("../utils/db");
 
 exports.searchAllUsers = async () => {
   const row = await db.query(
-    `SELECT * FROM users ORDER BY id ASC LIMIT 20 OFFSET 5`
+    `SELECT * FROM users ORDER BY id DESC`
   );
   return row.rows;
 };
 
 exports.searchAllRecipe = async (search) => {
-  const row = await db.query(`SELECT * FROM recipe WHERE title LIKE '%'||$1||'%' OR inggredients LIKE '%'||$1||'%' ORDER BY recipe_id DESC  LIMIT $2 OFFSET $3`, [search.search, search.limit, search.offset ]);
+  const row = await db.query(`SELECT * FROM recipe  LEFT OUTER JOIN  comment ON recipe.recipe_id = comment.recipe_id  WHERE recipe.title LIKE '%'||$1||'%' OR recipe.inggredients LIKE '%'||$1||'%' ORDER BY recipe.recipe_id DESC LIMIT $2 OFFSET $3`, [search.search, search.limit, search.offset ]);
   return row.rows;
 };
 
