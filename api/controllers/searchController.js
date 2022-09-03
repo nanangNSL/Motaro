@@ -10,29 +10,6 @@ let redisClient;
   await redisClient.connect();
 })();
 
-// async function getSpeciesData(req, res) {
-//   const species = req.params.species;
-//   let results;
-
-//   try {
-//     results = await fetchApiData(species);
-//     if (results.length === 0) {
-//       throw "API returned an empty array";
-//     }
-//     await redisClient.set(species, JSON.stringify(results), {
-//       EX: 180,
-//       NX: true,
-//     });
-
-//     res.send({
-//       fromCache: false,
-//       data: results,
-//     });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(404).send("Data unavailable");
-//   }
-// }
 
 exports.searchAllUsers = async (request, response, next) => {
   try {
@@ -135,16 +112,16 @@ exports.searchVideoId = async (request, response, next) => {
   let dataVideo;
   try {
     dataVideo = await searchService.searchVideoId(dataQuery);
-   if (dataRecipe.length === 0) {
+   if (dataVideo.length === 0) {
       throw "API returned an empty array";
     }
-    await redisClient.set(dataQuery, JSON.stringify(dataRecipe), {
+    await redisClient.set(dataQuery, JSON.stringify(dataVideo), {
       EX: 180,
       NX: true,
     });
     response.send({
       fromCache: false,
-      data: dataRecipe,
+      data: dataVideo,
     });
   } catch (error) {
     next(error);
