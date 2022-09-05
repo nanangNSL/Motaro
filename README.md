@@ -77,7 +77,7 @@
              <li>Backend (server) || or you can use an endpoint server 👉<code><a href="https://motaro.herokuapp.com">link<a></code> 
              <pre><code>git clone -b deployment https://github.com/nanangNSL/Motaro.git</code> </pre>
              </li>
-            <li>Webiste (client)
+            <li>Client
              <pre><code>git clone -b add-responsive https://github.com/nanangNSL/Motaro.git</code> </pre>
              </li>
           </ul>
