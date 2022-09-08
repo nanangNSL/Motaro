@@ -55,6 +55,7 @@ exports.Login = async (request, response, next) => {
         response.cookie("refreshToken", refreshToken, {
           httpOnly: true,
           maxAge: 24 * 60 * 60 * 1000,
+          secure: true,
         });
         response.json({ token})
       } else {
