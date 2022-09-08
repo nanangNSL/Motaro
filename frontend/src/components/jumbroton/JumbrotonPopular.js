@@ -25,7 +25,8 @@ const JumbrotonPopular = () => {
       const response = await axios.get("https://motaro.herokuapp.com/recipe/get");
       setRecipe(response.data.data);
     } catch (error) {
-      Swal.fire("sorry", error, "error");
+      const msg = error.code;
+      Swal.fire(msg, "Check internet connection again", "error");
     }
   };
   useEffect(() => {

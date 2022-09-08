@@ -80,7 +80,11 @@
   background: none;
   overflow: hidden;
 }
-
+.comment{
+  background: none;
+  height: 9vh;
+  margin-bottom: 2%;
+}
 .banner-pop {
   border-left: 15px solid #efc81a !important;
   color: #2e266f;
@@ -157,6 +161,7 @@ text-align: center;
 .img-pop{
   width: 15rem;
   height: 13rem;
+  object-fit: cover;
 
 }
 .img-pop-mobile{
@@ -179,12 +184,41 @@ text-align: center;
 .col-search:hover{
   background-color: #2e266f;
 }
+.bg-post{
+  background-color: #efc81a;
+  color: white;
+  border: none;
+}
 .col-search{
   background-color: #efc81a;
   border: none;
 }
 .width-search{
   width: 40vh;
+}
+.icon-recipe{
+  height: 51px !important;
+    width: 179px !important;
+}
+.video-label{
+  width: 92px;
+  height: 34px;
+  text-align: center;
+  border: 1px dashed #666666 !important;
+  border-radius: 5px;
+  font-size: 9px;
+  font-weight: 500;
+  display: flex !important;
+  flex-direction: row !important;
+  margin-left: 0.5%;
+}
+.icon-camera{
+  font-size: 28px;
+}
+.name{
+  color: #2e266f;
+  margin: 2%;
+  font-size: 18px;
 }
 .bottom-left {
   position: absolute;
@@ -220,19 +254,7 @@ text-align: center;
   color: #666666;
   border: none;
 }
-.icon-pen {
-  color: #efc81a;
-}
-.pen-profile {
-  font-family: "AirBk";
-  color: #efc81a !important;
-  text-align: center;
-  height: max-content;
-  margin-top: 34vh;
-  margin-left: -3vw;
-  border: none;
-  background: none;
-}
+
 .color-bar {
   font-family: "AirBk";
   color: #666666 !important;
@@ -261,14 +283,53 @@ text-align: center;
   justify-content: center;
 }
 .image-profile {
-  width: 14rem;
-  height: 14rem;
   border-radius: 50%;
+  width: 134px;
+  height: 116px;
+  object-fit: cover;
 }
+.modal-profile{
+  width: 389px;
+  height: 400px;
+}
+.img-placeholder{
+  border-radius: 53%;
+  width: 124px;
+  height: 124px;
+  object-fit: cover;
+}
+.btn-edit{
+  width: 200px;
+  padding: 2%;
+  border-radius: 7px;
+  
+}
+.nav-tabs .nav-link:focus{
+  background-color: white !important;
+  border: none !important;
+  color: #efc81a;
+
+}
+.nav-link{
+  color: #e7e7e7;
+}
+
 .button-video {
   display: flex;
   flex-direction: column;
   width: 20vw;
+  margin-top: -2%;
+}
+.image-comment{
+  border-radius: 35px;
+  object-fit: cover;
+}
+.text-name{
+  font-weight: 500 !important;
+  font-size: 13px;
+}
+.text-cpmment{
+  font-size: 12px;
 }
 .button-modal {
   width: 10vw;
@@ -466,29 +527,20 @@ input#file-video{
 }
 .navbar-mobile{
   border-radius: 20px 20px 0px 0px;
-  background-color:#FEFEFE !important;
-  height: 20vh;
-  width: 0;
+  background-color: #FEFEFE !important;
+  height: 28vh;
   width: -webkit-fill-available;
+  width: 399px;
 }
-.btn-mobile{
-  font-family: "AirBk";
-  background-color:  #FEFEFE;
+.btn-menu{
+  width: 92px;
   color: #efc81a;
-  width: 23vw;
-  display: flex;
-  justify-content: center;
-  justify-items: center;
-  padding-left: 7px;
-  padding-right: 5px;
-  padding-top: 16px;
-  border: none;
-  border-radius: 15px;
-  margin: 1%;
-  position: relative;
-  overflow: hidden;
-  height: 7vh;  
+  margin: 2%;
+  height: 43px;
+ background: none;
+ border: none;
 }
+
 .btn-mobile-login{
   background-color: #efc81a;
   border: none;
@@ -716,9 +768,6 @@ background-color: #EFEFEF ;
   background-color: #ffffff;
 }
 
-.yellow-front {
-  /* background-color: #2E266F; */
-}
 .col-template-full-color {
   margin-top: -50px;
   background-color: #fff5ec;
