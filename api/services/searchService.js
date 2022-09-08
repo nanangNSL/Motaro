@@ -32,8 +32,8 @@ exports.searchById = async (id) => {
     return post;
   };
 
-  exports.searchVideoId = async (id) => {
-    const post = await searchModel.searchVideoId(id);
+  exports.searchVideoId = async (idRecipe) => {
+    const post = await searchModel.searchVideoId(idRecipe);
     return post;
   };
   

@@ -5,7 +5,7 @@ const Post = schema.object({
   name: schema.string(),
   image: schema.string(),
   email: schema.string().email(),
-  phonenumber: schema.number(),
+  phonenumber: schema.number().max(12),
   password: schema.string(),
 
   // schema. for comment
@@ -14,7 +14,7 @@ const Post = schema.object({
   comment: schema.string(),
 
   // schema. for recipe
-  recipe_id: schema.number(),
+  recipe_id: schema.string(),
   title: schema.string().max(30) ,
   image: schema.string(),
   inggredients: schema.string(),

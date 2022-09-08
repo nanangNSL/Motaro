@@ -1,6 +1,6 @@
 const searchService = require("../services/searchService");
 const redisClient = require('../utils/redis')
-
+const { v4: uuidv4 } = require('uuid');
 
 exports.searchAllUsers = async (request, response, next) => {
   try {
@@ -22,7 +22,8 @@ exports.searchByUserEmail = async (request, response, next) => {
     if (data.length === 0) {
       throw "API returned an empty array";
     }
-    await redisClient.set(dataQuery, JSON.stringify(data), {
+
+    await redisClient.set(dataQuery+'email', JSON.stringify(data), {
       EX: 180,
       NX: true,
     });
@@ -43,7 +44,7 @@ exports.searchById = async (request, response, next) => {
     if (dataResult.length === 0) {
       throw "API returned an empty array";
     }
-    await redisClient.set(dataQuery, JSON.stringify(dataResult), {
+    await redisClient.set(dataQuery+'users', JSON.stringify(dataResult), {
       EX: 180,
       NX: true,
     });
@@ -64,7 +65,7 @@ exports.searchCommentById = async (request, response, next) => {
     if (dataComment.length === 0) {
       throw "API returned an empty array";
     }
-    await redisClient.set(dataQuery, JSON.stringify(dataComment), {
+   await redisClient.set(dataQuery+'comment', JSON.stringify(dataComment), {
       EX: 180,
       NX: true,
     });
@@ -85,7 +86,8 @@ exports.searchRecipeId = async (request, response, next) => {
     if (dataRecipe.length === 0) {
       throw "API returned an empty array";
     }
-    await redisClient.set(dataQuery, JSON.stringify(dataRecipe), {
+
+    await redisClient.set(dataQuery+'recipe', JSON.stringify(dataRecipe), {
       EX: 180,
       NX: true,
     });
@@ -106,7 +108,7 @@ exports.searchVideoId = async (request, response, next) => {
    if (dataVideo.length === 0) {
       throw "API returned an empty array";
     }
-    await redisClient.set(dataQuery, JSON.stringify(dataVideo), {
+    await redisClient.set(dataQuery+"video", JSON.stringify(dataVideo), {
       EX: 180,
       NX: true,
     });
@@ -115,6 +117,7 @@ exports.searchVideoId = async (request, response, next) => {
       data: dataVideo,
     });
   } catch (error) {
+    console.log(error);
     next(error);
   }
 };

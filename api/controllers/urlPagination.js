@@ -2,7 +2,7 @@ const searchService = require("../services/searchService");
 
 exports.getData = async (req, res) => {
   const page = parseInt(req.query.page) || 0;
-  const limit = parseInt(req.query.limit) || 6;
+  const limit = parseInt(req.query.limit) || 8;
   const search = req.query.search_query || "";
   const offset = limit * page;
   const totalRows = await searchService.searchAllRecipe({

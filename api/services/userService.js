@@ -18,6 +18,11 @@ exports.update = async (id, data) => {
   const post = await usersModel.update(id, data);
   return post;
 };
+exports.updatePwd = async (id, data) => {
+  // motaroValidator(data, id);
+  const post = await usersModel.updatePwd(id, data);
+  return post;
+};
 
 exports.updateToken = async (id, data) => {
   const post = await usersModel.updateToken(id, data);

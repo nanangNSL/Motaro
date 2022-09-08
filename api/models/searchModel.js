@@ -8,7 +8,7 @@ exports.searchAllUsers = async () => {
 };
 
 exports.searchAllRecipe = async (search) => {
-  const row = await db.query(`SELECT * FROM recipe  LEFT OUTER JOIN  comment ON recipe.recipe_id = comment.recipe_id  WHERE recipe.title LIKE '%'||$1||'%' OR recipe.inggredients LIKE '%'||$1||'%' ORDER BY recipe.recipe_id DESC LIMIT $2 OFFSET $3`, [search.search, search.limit, search.offset ]);
+  const row = await db.query(`SELECT * FROM recipe   WHERE recipe.title LIKE '%'||$1||'%' OR recipe.inggredients LIKE '%'||$1||'%' ORDER BY date DESC LIMIT $2 OFFSET $3`, [search.search, search.limit, search.offset ]);
   return row.rows;
 };
 
@@ -23,7 +23,7 @@ exports.searchById = async (id) => {
 };
 
 exports.searchComentID = async (id) => {
-  const row = await db.query("SELECT * FROM comment WHERE id = $1", [id]);
+  const row = await db.query("SELECT comment.*, comment.id as id, users.name, users.image FROM comment LEFT JOIN users ON comment.user_id = users.id WHERE recipe_id = $1", [id]);
   return row.rows;
 };
 
@@ -32,10 +32,11 @@ exports.searchRecipeId = async (id) => {
   return row.rows;
 };
 
-exports.searchVideoId = async (id) => {
-  const row = await db.query("SELECT * FROM sub_video WHERE id_video = $1", [
-    id,
+exports.searchVideoId = async (idRecipe) => {
+  const row = await db.query("SELECT * FROM sub_video WHERE recipe_id = $1", [
+    idRecipe,
   ]);
+ 
   return row.rows;
 };
 

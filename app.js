@@ -13,8 +13,7 @@ app.disable("x-powered-by");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(cors());
-const allowlist = ["https://motaro-2020d.web.app", "http://localhost:3000", "https://motaro-2020d.firebaseapp.com"];
+const allowlist = ['https://motaro-2020d.web.app', 'http://localhost:3000', 'http://localhost:3001'];
 const corsOptionsDelegate = function (req, callback) {
   let corsOptions;
   if (allowlist.indexOf(req.header("Origin")) !== -1) {

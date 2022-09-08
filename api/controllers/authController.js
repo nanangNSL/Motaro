@@ -3,7 +3,6 @@ const usersService = require("../services/userService");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const { request } = require("express");
 
 exports.Register = async (req, res, next) => {
   const { name, email, phonenumber, password, confPassword } = req.body;
@@ -57,7 +56,7 @@ exports.Login = async (request, response, next) => {
           httpOnly: true,
           maxAge: 24 * 60 * 60 * 1000,
         });
-        response.status(200).send(`${token}`);
+        response.json({ token})
       } else {
         response.status(401).send("password is not valid");
       }

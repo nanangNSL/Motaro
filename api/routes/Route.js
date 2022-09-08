@@ -28,20 +28,21 @@ module.exports = (route) => {
   // search for url pagination
   route.get("/search", getData.getData );
 
-  //search for admin
-  route.get("/admin/:email",  verifyToken,cacheData, search.searchByUserEmail);
+  //search for admin cacheData
+  route.get("/admin/:email",  cacheData, search.searchByUserEmail);
   route.get("/admin/id/:id",  cacheData ,search.searchById);
-  route.get("/admin/comment/:id", verifyToken, cacheData, search.searchCommentById);
+  route.get("/admin/comment/:id",  cacheData, search.searchCommentById);
   route.get("/admin/recipe/:id", cacheData, search.searchRecipeId);
-  route.get("/admin/video/:id", verifyToken, cacheData , search.searchVideoId);
+  route.get("/admin/video/:id", cacheData , search.searchVideoId);
 
   // profile
   route.post("/profile/insert", verifyToken, imageUploadUser, users.insert);
-  route.patch("/profile/:id", imageUploadUser, users.update);
+  route.patch("/profile/:id", imageUploadUser, users.updateImage);
+  route.patch("/profile/pwd/:id", imageUploadUser, users.updatePwd);
   route.delete("/profile/:id", verifyToken, users.delete);
 
   // comment
-  route.post("/comment/insert", verifyToken, comment.insert);
+  route.post("/comment/insert", comment.insert);
   route.get("/comment/get", verifyToken, comment.select);
   route.patch("/comment/:id",  verifyToken,comment.update);
   route.delete("/comment/:id", verifyToken, comment.delete);
@@ -53,7 +54,7 @@ module.exports = (route) => {
   route.delete("/recipe/:id",recipe.delete);
 
   //video
-  route.post("/video/insert", verifyToken, imageUploadVideos, video.insert);
+  route.post("/video/insert", imageUploadVideos, video.insert);
   route.get("/video/get",  video.select);
   route.patch("/video/:id", verifyToken, imageUploadVideos, video.update);
   route.delete("/video/:id", verifyToken, video.delete);

@@ -2,7 +2,7 @@ const commentModel = require("../models/commentModel");
 const motaroValidator = require("../validators/motaroValidator");
 
 exports.insert = async (data) => {
-  motaroValidator(data, ["user_id", "comment"]);
+  motaroValidator(data, [ "comment"]);
   const post = await commentModel.insert(data);
   return post;
 };

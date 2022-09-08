@@ -37,13 +37,9 @@ exports.register = async (data) => {
 
 exports.update = async (id, data) => {
   const row = await db.query(
-    `UPDATE users SET name = $1, image =$2, email = $3,phonenumber = $4, password = $5 WHERE id = $6`,
+    `UPDATE users SET image =$1 WHERE id = $2`,
     [
-      data.name,
       data.image,
-      data.email,
-      data.phonenumber,
-      data.password,
       id,
     ]
   );
@@ -52,6 +48,14 @@ exports.update = async (id, data) => {
   }
   return { data };
 };
+
+exports.updatePwd = async(id, data) =>{
+  const row = await db.query(`UPDATE users SET password = $1 WHERE id = $2`,[data.password, id])
+  if (row.affectedRows === 0) {
+    return null;
+  }
+  return { data };
+}
 
 
 exports.updateToken = async (id, data) => {

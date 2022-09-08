@@ -2,7 +2,7 @@ const videoModel = require('../models/videoModel');
 const motaroValidator = require('../validators/motaroValidator');
 
 exports.insert = async (data) => {
-  motaroValidator(data, ['user_id', 'title_video','video']);
+  motaroValidator(data, ['title_video','video']);
   const post = await videoModel.insert(data);
   return post;
 };
