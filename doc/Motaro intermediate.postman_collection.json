@@ -15,7 +15,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/users/get",
+							"raw": "https://motaro.herokuapp.com/users/get",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -35,7 +35,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/admin/id/:id",
+							"raw": "https://motaro.herokuapp.com/admin/id/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -57,12 +57,54 @@
 					"response": []
 				},
 				{
-					"name": "Edit User",
+					"name": "Edit image",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/nanan/BOOTCAMP/unit tes/image/sizeSmall.jpg"
+								},
+								{
+									"key": "name",
+									"value": "Nanang komarudin",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "https://motaro.herokuapp.com/profile/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"profile",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "155"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit password",
 					"request": {
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/users/:id",
+							"raw": "https://motaro.herokuapp.com/users/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -88,7 +130,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/users/:id",
+							"raw": "https://motaro.herokuapp.com/users/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -162,7 +204,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/users/insert",
+							"raw": "https://motaro.herokuapp.com/users/insert",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -194,7 +236,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://localhost:8080/comment/get",
+							"raw": "https://motaro.herokuapp.com/comment/get",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -209,25 +251,26 @@
 					"response": []
 				},
 				{
-					"name": "Get comment by id",
+					"name": "Get comment by recipe",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/comment/:id",
+							"raw": "https://motaro.herokuapp.com/admin/comment/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "5000",
 							"path": [
+								"admin",
 								"comment",
 								":id"
 							],
 							"variable": [
 								{
 									"key": "id",
-									"value": null
+									"value": "191"
 								}
 							]
 						}
@@ -244,28 +287,28 @@
 							"urlencoded": [
 								{
 									"key": "user_id",
-									"value": "147",
+									"value": "150",
 									"type": "text"
 								},
 								{
 									"key": "recipe_id",
-									"value": "114",
+									"value": "191",
 									"type": "text"
 								},
 								{
 									"key": "comment",
-									"value": "babat enak",
+									"value": "Aku coba resepnya dan berhasil",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/comment/insert",
+							"raw": "https://motaro.herokuapp.com/comment/insert",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "5000",
 							"path": [
 								"comment",
 								"insert"
@@ -280,7 +323,7 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/comment/:id",
+							"raw": "https://motaro.herokuapp.com/comment/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -306,7 +349,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/comment/:id",
+							"raw": "https://motaro.herokuapp.com/comment/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -337,7 +380,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/recipe/get",
+							"raw": "https://motaro.herokuapp.com/recipe/get",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -357,7 +400,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/recipe/:id",
+							"raw": "https://motaro.herokuapp.com/recipe/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -414,7 +457,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/recipe/insert",
+							"raw": "https://motaro.herokuapp.com/recipe/insert",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -434,7 +477,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/recipe/:id",
+							"raw": "https://motaro.herokuapp.com/recipe/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -460,7 +503,7 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/recipe/:id",
+							"raw": "https://motaro.herokuapp.com/recipe/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -491,7 +534,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/video/get",
+							"raw": "https://motaro.herokuapp.com/video/get",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -536,7 +579,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:8080/video/insert",
+							"raw": "https://motaro.herokuapp.com/video/insert",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -551,12 +594,12 @@
 					"response": []
 				},
 				{
-					"name": "Get by Id",
+					"name": "Get by recipe",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/video/:id",
+							"raw": "https://motaro.herokuapp.com/video/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -582,7 +625,7 @@
 						"method": "PATCH",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/video/:id",
+							"raw": "https://motaro.herokuapp.com/video/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -608,7 +651,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/video/:id",
+							"raw": "https://motaro.herokuapp.com/video/:id",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -639,7 +682,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/search?search_query=bakso&page=1&offset",
+							"raw": "https://motaro.herokuapp.com/search?search_query=bakso&page=1&offset",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -677,7 +720,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/motaro/find",
+							"raw": "https://motaro.herokuapp.com/motaro/find",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -699,7 +742,7 @@
 					"response": []
 				},
 				{
-					"name": "get video by id",
+					"name": "get video by id recipe",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -714,7 +757,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/admin/video/4",
+							"raw": "https://motaro.herokuapp.com/admin/video/4",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -742,7 +785,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/motaro/find",
+							"raw": "https://motaro.herokuapp.com/motaro/find",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -769,7 +812,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/motaro/find",
+							"raw": "https://motaro.herokuapp.com/motaro/find",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -796,7 +839,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:5000/motaro/find",
+							"raw": "https://motaro.herokuapp.com/motaro/find",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -832,7 +875,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://localhost:5000/users",
+							"raw": "https://motaro.herokuapp.com/users",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -866,7 +909,7 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:5000/login",
+							"raw": "https://motaro.herokuapp.com/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -889,7 +932,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://localhost:5000/logout",
+							"raw": "https://motaro.herokuapp.com/logout",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -915,7 +958,7 @@
 							"urlencoded": []
 						},
 						"url": {
-							"raw": "http://localhost:5000/token",
+							"raw": "https://motaro.herokuapp.com/token",
 							"protocol": "http",
 							"host": [
 								"localhost"
