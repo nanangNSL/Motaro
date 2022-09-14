@@ -6,11 +6,10 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Card from "react-bootstrap/Card";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const JumbrotonGridDesktop = () => {
-    const navigate = useNavigate()
   const [recipe, setRecipe] = useState([]);
   const [page, setPage] = useState(0);
   const [limit, setLimit] = useState(8);

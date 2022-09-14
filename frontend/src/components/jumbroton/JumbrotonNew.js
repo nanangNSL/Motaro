@@ -1,7 +1,8 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import gambar1 from "../../style/images/popular.png";
+import gambar1 from "../../style/images/fruit.jpg";
+import gambar2 from "../../style/images/sereal.jpg";
 import pot from "../../style/images/pot.png";
 import fish from "../../style/images/fish.png";
 import garpu from "../../style/images/garpu.png";
@@ -88,21 +89,16 @@ const JumbrotonNew = () => {
                             <div>
                               <img
                                 alt="Web Studio"
-                                className="img-fluid"
+                                className="img-fluid rounded"
                                 src={gambar1}
                               />
                             </div>
                           </div>
                           <div className="col-md-6 col-lg-5 ml-auto d-flex align-items-center mt-4 mt-md-0 ms-5">
                             <div>
-                              <h2>Healthy Bone Broth Ramen (Quick & Easy)</h2>
+                              <h2>Copycat Cracker Barrel Pancake Recipe</h2>
                               <hr className="lineNew" />
-                              <p className="margin-top-s">
-                                Whether you’re a full stack web developer,
-                                content author, or business professional –
-                                Solodev gives you the power to build, customize,
-                                and manage modules to boost your website.
-                              </p>
+                              <p className="margin-top-s">This buttermilk cracker barrel pancakes recipe is right on the money when it comes to creating a copycat recipe. We’ve expertly recreated the masterpiece breakfast you find at the Cracker Barrel restaurant. Morning has never been so sweet.</p>
                               <Button className="btn-new">Learn more</Button>
                             </div>
                           </div>
@@ -118,20 +114,17 @@ const JumbrotonNew = () => {
                             <div>
                               <img
                                 alt="Web Studio"
-                                className="img-fluid"
-                                src={gambar1}
+                                className="img-fluid rounded"
+                                src={gambar2}
                               />
                             </div>
                           </div>
                           <div className="col-md-6 col-lg-5 ml-auto d-flex align-items-center mt-4 mt-md-0 ms-5">
                             <div>
-                              <h2>Healthy Bone Broth Ramen (Quick & Easy)</h2>
+                              <h2>Healthy Nature's Cereal Recipe (Quick & Easy)</h2>
                               <hr className="lineNew" />
                               <p className="margin-top-s">
-                                Whether you’re a full stack web developer,
-                                content author, or business professional –
-                                Solodev gives you the power to build, customize,
-                                and manage modules to boost your website.
+                              The nature's cereal trend started on TikTok when Sherwayne Mears (@natures_food) created a viral video that's been viewed over 5 million times.
                               </p>
                               <Button className="btn-new">Learn more</Button>
                             </div>
